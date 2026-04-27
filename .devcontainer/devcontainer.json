@@ -1,0 +1,18 @@
+{
+  "name": "Hugo Development",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/hugo:1": {
+      "extended": true,
+      "version": "latest"
+    }
+  },
+  "postCreateCommand": "hugo version",
+  "forwardPorts": [1313],
+  "portsAttributes": {
+    "1313": {
+      "label": "Hugo Server",
+      "onAutoForward": "openBrowser"
+    }
+  }
+}
