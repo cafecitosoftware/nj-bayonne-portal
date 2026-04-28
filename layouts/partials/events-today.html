@@ -1,0 +1,30 @@
+{{ $now := now }}
+{{ $today := $now.Format "2006-01-02" }}
+
+<section>
+  <h2>Today</h2>
+
+  {{ $hasToday := false }}
+
+  {{ range $file := slice .Site.Data.events.library .Site.Data.events.school }}
+
+    {{ range $file.events }}
+
+      {{ $event := time .event_date }}
+
+      {{ if eq ($event.Format "2006-01-02") $today }}
+        {{ $hasToday = true }}
+        <div>
+          <strong>{{ .title }}</strong><br>
+          <small>{{ .location }} · {{ $event.Format "3:04 PM" }}</small>
+        </div>
+      {{ end }}
+
+    {{ end }}
+
+  {{ end }}
+
+  {{ if not $hasToday }}
+    <p>No events today</p>
+  {{ end }}
+</section>

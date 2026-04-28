@@ -1,0 +1,30 @@
+{{ $now := now }}
+{{ $weekEnd := $now.AddDate 0 0 7 }}
+
+<section>
+  <h2>This Week</h2>
+
+  {{ $hasWeek := false }}
+
+  {{ range $file := slice .Site.Data.events.library .Site.Data.events.school }}
+
+    {{ range $file.events }}
+
+      {{ $event := time .event_date }}
+
+      {{ if and (ge $event $now) (lt $event $weekEnd) }}
+        {{ $hasWeek = true }}
+        <div>
+          <strong>{{ .title }}</strong><br>
+          <small>{{ .location }} · {{ $event.Format "Mon Jan 2 · 3:04 PM" }}</small>
+        </div>
+      {{ end }}
+
+    {{ end }}
+
+  {{ end }}
+
+  {{ if not $hasWeek }}
+    <p>No upcoming events this week</p>
+  {{ end }}
+</section>
