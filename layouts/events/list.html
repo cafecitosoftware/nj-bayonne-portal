@@ -1,0 +1,29 @@
+{{ define "main" }}
+
+<h1>Events</h1>
+
+{{ range $sourceName, $source := site.Data.events }}
+
+  <h2>{{ $source.name }}</h2>
+
+  {{ range $source.events }}
+
+    <div class="event">
+
+      <h3>{{ .title }}</h3>
+
+      <p>
+        {{ .event_date }} @ {{ .start_time }}
+      </p>
+
+      <p>{{ .location }}</p>
+
+      <p>{{ .description }}</p>
+
+    </div>
+
+  {{ end }}
+
+{{ end }}
+
+{{ end }}

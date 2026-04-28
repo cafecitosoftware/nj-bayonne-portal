@@ -1,0 +1,14 @@
+name: Library
+
+events:
+  - title: Story Time
+    slug: story-time
+    event_date: 2026-05-01
+    location: Library
+    description: Kids reading session
+
+  - title: Book Club
+    slug: book-club
+    event_date: 2026-05-03
+    location: Library
+    description: Monthly meeting

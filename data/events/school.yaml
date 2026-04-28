@@ -1,0 +1,8 @@
+name: School
+
+events:
+  - title: Spring Concert
+    slug: spring-concert
+    event_date: 2026-05-02
+    location: High School
+    description: Student performance night
