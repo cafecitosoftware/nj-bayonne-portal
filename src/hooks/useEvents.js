@@ -16,8 +16,8 @@ export default function useEvents() {
 
         // Load all event files
         const files = await Promise.all(
-          index.sources.map((file) =>
-            fetch(`/data/events/${file}`)
+          index.sources.map((source) =>
+            fetch(source.endpoint)
           )
         );
 
