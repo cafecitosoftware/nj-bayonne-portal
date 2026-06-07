@@ -1,0 +1,14 @@
+{
+  "organization": "Bayonne Public Library",
+  "category": "Library",
+  "events": [
+    {
+      "id": "story-time",
+      "title": "Story Time",
+      "date": "2026-06-15",
+      "time": "10:00",
+      "location": "Children's Room",
+      "description": "Stories and crafts."
+    }
+  ]
+}
