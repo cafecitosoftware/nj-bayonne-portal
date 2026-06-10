@@ -41,7 +41,15 @@ export function useEventSources(indexEndpoint = DEFAULT_INDEX_ENDPOINT) {
         throw new Error(`Unable to load event index: ${indexResponse.status}`)
       }
 
-      const indexPayload = await indexResponse.json()
+      let indexPayload
+      const indexText = await indexResponse.text()
+      try {
+        indexPayload = JSON.parse(indexText)
+      } catch (jsonError) {
+        console.error('Failed to parse index JSON:', indexText.substring(0, 200))
+        throw new Error(`Invalid JSON from index: ${jsonError.message}`)
+      }
+
       const sources = Array.isArray(indexPayload?.sources) ? indexPayload.sources : []
       const allowedSources = sources.filter((source) => {
         const allowed = isLocalJsonSource(source)
@@ -60,7 +68,15 @@ export function useEventSources(indexEndpoint = DEFAULT_INDEX_ENDPOINT) {
             )
           }
 
-          const sourcePayload = await sourceResponse.json()
+          let sourcePayload
+          const sourceText = await sourceResponse.text()
+          try {
+            sourcePayload = JSON.parse(sourceText)
+          } catch (jsonError) {
+            console.error(`Failed to parse ${source.id} JSON:`, sourceText.substring(0, 200))
+            throw new Error(`Invalid JSON from source "${source.id}": ${jsonError.message}`)
+          }
+
           loadedSources.value.push(source)
           return normalizeSourceEvents(source, sourcePayload)
         }),
@@ -70,6 +86,7 @@ export function useEventSources(indexEndpoint = DEFAULT_INDEX_ENDPOINT) {
     } catch (loadError) {
       events.value = []
       error.value = loadError instanceof Error ? loadError.message : 'Failed to load events'
+      console.error('Event loading error:', error.value)
     } finally {
       loading.value = false
     }
