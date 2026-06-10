@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, ref, watch, onMounted, onBeforeUnmount } from 'vue'
 import { useEventSources } from '@/composables/useEventSources'
 import FullCalendar from '@fullcalendar/vue3'
 import dayGridPlugin from '@fullcalendar/daygrid'
@@ -8,15 +8,91 @@ import listPlugin from '@fullcalendar/list'
 const { events, eventsLegend, loading, error } = useEventSources()
 
 const selectedEvent = ref(null)
+const selectedSources = ref([])
+const descriptionExpanded = ref(false)
+const descriptionPreviewLength = 280
+
+const sourceOptions = computed(() =>
+  Object.entries(eventsLegend.value || {}).map(([name, color]) => ({ name, color }))
+)
+
+watch(sourceOptions, (sources) => {
+  if (sources.length === 0) return
+  if (selectedSources.value.length === 0) {
+    selectedSources.value = sources.map(source => source.name)
+  }
+}, { immediate: true })
+
+const filteredEvents = computed(() =>
+  events.value.filter(event => selectedSources.value.includes(event.source))
+)
+
+const visibleEventCount = computed(() => filteredEvents.value.length)
+
+function toggleSource(sourceName) {
+  if (selectedSources.value.includes(sourceName)) {
+    selectedSources.value = selectedSources.value.filter(name => name !== sourceName)
+  } else {
+    selectedSources.value = [...selectedSources.value, sourceName]
+  }
+}
+
+function selectAllSources() {
+  selectedSources.value = sourceOptions.value.map(source => source.name)
+}
+
+function clearSources() {
+  selectedSources.value = []
+  closeSelectedEvent()
+  descriptionExpanded.value = false
+}
+
+function closeSelectedEvent() {
+  selectedEvent.value = null
+  descriptionExpanded.value = false
+}
+
+function isDescriptionLong(text) {
+  return Boolean(text && text.length > descriptionPreviewLength)
+}
+
+const displayDescription = computed(() => {
+  const description = selectedEvent.value?.description || ''
+  if (!isDescriptionLong(description) || descriptionExpanded.value) return description
+  return `${description.slice(0, descriptionPreviewLength).trimEnd()}...`
+})
+
+function buildOutboundUrl(rawUrl) {
+  if (!rawUrl) return ''
+  try {
+    const url = new URL(rawUrl)
+    url.searchParams.set('utm_source', 'cafecito-software')
+    url.searchParams.set('utm_medium', 'calendar')
+    url.searchParams.set('utm_campaign', 'bayonne-portal')
+    return url.toString()
+  } catch {
+    return rawUrl
+  }
+}
+
+function toDateTime(date, time) {
+  if (!date) return undefined
+  return time ? `${date}T${time}:00` : date
+}
 
 const calendarEvents = computed(() =>
-  events.value.map(event => ({
+  filteredEvents.value.map(event => ({
     id: event.id,
     title: event.title,
-    start: event.date,
+    start: toDateTime(event.date, event.time),
+    end: toDateTime(event.endDate, event.endTime),
+    allDay: !(event.time || event.endTime),
     color: event.color || '#3788d8',
     extendedProps: {
       time: event.time,
+      endDate: event.endDate,
+      endTime: event.endTime,
+      url: event.url,
       location: event.location,
       description: event.description,
       source: event.source,
@@ -25,14 +101,24 @@ const calendarEvents = computed(() =>
 )
 
 function handleEventClick(info) {
+  descriptionExpanded.value = false
   selectedEvent.value = {
     title: info.event.title,
     date: info.event.startStr,
     time: info.event.extendedProps.time,
+    endDate: info.event.extendedProps.endDate,
+    endTime: info.event.extendedProps.endTime,
+    url: info.event.extendedProps.url,
     location: info.event.extendedProps.location,
     description: info.event.extendedProps.description,
     source: info.event.extendedProps.source,
     color: info.event.backgroundColor,
+  }
+}
+
+function handleKeydown(event) {
+  if (event.key === 'Escape' && selectedEvent.value) {
+    closeSelectedEvent()
   }
 }
 
@@ -53,11 +139,10 @@ function formatTime(timeStr) {
 
 const calendarOptions = computed(() => ({
   plugins: [dayGridPlugin, listPlugin],
-  initialView: 'dayGridMonth',
+  initialView: 'listMonth',
   weekends: true,
   events: calendarEvents.value,
   eventClick: handleEventClick,
-  eventCursor: 'pointer',
   headerToolbar: {
     left: 'prev,next today',
     center: 'title',
@@ -68,10 +153,24 @@ const calendarOptions = computed(() => ({
     month: 'Month',
     list: 'List',
   },
+  displayEventTime: true,
+  eventTimeFormat: {
+    hour: 'numeric',
+    minute: '2-digit',
+    meridiem: 'short',
+  },
   height: 'auto',
   eventDisplay: 'block',
-  dayMaxEvents: 3,
+  dayMaxEvents: 2,
 }))
+
+onMounted(() => {
+  window.addEventListener('keydown', handleKeydown)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('keydown', handleKeydown)
+})
 </script>
 
 <template>
@@ -96,16 +195,49 @@ const calendarOptions = computed(() => ({
     <!-- Calendar + Detail Panel -->
     <div v-else>
 
-      <!-- Legend -->
-      <div class="flex flex-wrap items-center gap-4 mb-5 px-1">
-        <span class="text-xs font-semibold uppercase tracking-wide text-gray-400">Sources:</span>
-        <div
-          v-for="(color, source) in eventsLegend"
-          :key="source"
-          class="flex items-center gap-2 bg-gray-50 border border-gray-200 rounded-full px-3 py-1"
-        >
-          <span :style="{ backgroundColor: color }" class="w-3 h-3 rounded-full flex-shrink-0"></span>
-          <span class="text-xs font-medium text-gray-700">{{ source }}</span>
+      <!-- Filter Bar -->
+      <div class="mb-5 rounded-xl border border-gray-200 bg-white p-4">
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-wide text-gray-400">Filter by Source</p>
+            <p class="text-sm text-gray-600 mt-1">
+              Showing <span class="font-semibold text-gray-900">{{ visibleEventCount }}</span>
+              of <span class="font-semibold text-gray-900">{{ events.length }}</span> events
+            </p>
+          </div>
+          <div class="flex items-center gap-2">
+            <button
+              type="button"
+              @click="selectAllSources"
+              class="text-xs font-semibold px-3 py-1.5 rounded-full border border-gray-200 bg-gray-50 text-gray-700 hover:bg-gray-100 transition"
+            >
+              Select all
+            </button>
+            <button
+              type="button"
+              @click="clearSources"
+              class="text-xs font-semibold px-3 py-1.5 rounded-full border border-gray-200 bg-white text-gray-600 hover:bg-gray-50 transition"
+            >
+              Clear
+            </button>
+          </div>
+        </div>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <button
+            v-for="source in sourceOptions"
+            :key="source.name"
+            type="button"
+            @click="toggleSource(source.name)"
+            :class="[
+              'flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-medium transition',
+              selectedSources.includes(source.name)
+                ? 'border-blue-200 bg-blue-50 text-blue-800'
+                : 'border-gray-200 bg-white text-gray-500 hover:bg-gray-50'
+            ]"
+          >
+            <span :style="{ backgroundColor: source.color }" class="w-2.5 h-2.5 rounded-full"></span>
+            <span>{{ source.name }}</span>
+          </button>
         </div>
       </div>
 
@@ -114,75 +246,125 @@ const calendarOptions = computed(() => ({
         <FullCalendar :options="calendarOptions" />
       </div>
 
-      <!-- Event Detail Panel -->
+      <p v-if="visibleEventCount === 0" class="mt-3 text-sm text-center text-gray-500">
+        No events match the selected filters.
+      </p>
+
+      <!-- Event Detail Popover -->
       <transition
         enter-active-class="transition ease-out duration-200"
-        enter-from-class="opacity-0 translate-y-2"
-        enter-to-class="opacity-100 translate-y-0"
+        enter-from-class="opacity-0"
+        enter-to-class="opacity-100"
         leave-active-class="transition ease-in duration-150"
-        leave-from-class="opacity-100 translate-y-0"
-        leave-to-class="opacity-0 translate-y-2"
+        leave-from-class="opacity-100"
+        leave-to-class="opacity-0"
       >
         <div
           v-if="selectedEvent"
-          class="mt-5 bg-white rounded-2xl border border-gray-200 shadow-md overflow-hidden"
+          class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
         >
-          <!-- Colored top bar matching event source -->
-          <div :style="{ backgroundColor: selectedEvent.color }" class="h-1.5 w-full"></div>
+          <button
+            type="button"
+            class="absolute inset-0 bg-gray-900/40"
+            aria-label="Close event details"
+            @click="closeSelectedEvent"
+          ></button>
 
-          <div class="p-6">
-            <div class="flex items-start justify-between gap-4">
-              <div class="flex-1">
-                <h3 class="text-lg font-bold text-gray-900 leading-snug">{{ selectedEvent.title }}</h3>
-                <p class="text-sm text-gray-500 mt-1">{{ selectedEvent.source }}</p>
+          <div class="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto bg-white rounded-2xl border border-gray-200 shadow-2xl">
+            <!-- Colored top bar matching event source -->
+            <div :style="{ backgroundColor: selectedEvent.color }" class="h-1.5 w-full"></div>
+
+            <div class="p-6">
+              <div class="flex items-start justify-between gap-4">
+                <div class="flex-1">
+                  <h3 class="text-lg font-bold text-gray-900 leading-snug">{{ selectedEvent.title }}</h3>
+                  <p class="text-sm text-gray-500 mt-1">{{ selectedEvent.source }}</p>
+                </div>
+                <button
+                  @click="closeSelectedEvent"
+                  class="text-gray-400 hover:text-gray-600 transition flex-shrink-0"
+                  aria-label="Close"
+                >
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
               </div>
+
+              <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="flex items-start gap-2">
+                  <span class="text-blue-500 mt-0.5">📅</span>
+                  <div>
+                    <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide">Date</p>
+                    <p class="text-sm text-gray-700 mt-0.5">{{ formatDate(selectedEvent.date) }}</p>
+                  </div>
+                </div>
+                <div v-if="selectedEvent.time" class="flex items-start gap-2">
+                  <span class="text-blue-500 mt-0.5">🕐</span>
+                  <div>
+                    <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide">Time</p>
+                    <p class="text-sm text-gray-700 mt-0.5">{{ formatTime(selectedEvent.time) }}</p>
+                  </div>
+                </div>
+                <div v-if="selectedEvent.endTime" class="flex items-start gap-2">
+                  <span class="text-blue-500 mt-0.5">⏱️</span>
+                  <div>
+                    <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide">Ends</p>
+                    <p class="text-sm text-gray-700 mt-0.5">{{ formatTime(selectedEvent.endTime) }}</p>
+                  </div>
+                </div>
+                <div v-if="selectedEvent.location" class="flex items-start gap-2">
+                  <span class="text-blue-500 mt-0.5">📍</span>
+                  <div>
+                    <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide">Location</p>
+                    <p class="text-sm text-gray-700 mt-0.5">{{ selectedEvent.location }}</p>
+                  </div>
+                </div>
+              </div>
+
+              <p v-if="selectedEvent.description" class="mt-4 text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-4 whitespace-pre-line">
+                {{ displayDescription }}
+              </p>
+
               <button
-                @click="selectedEvent = null"
-                class="text-gray-400 hover:text-gray-600 transition flex-shrink-0"
-                aria-label="Close"
+                v-if="isDescriptionLong(selectedEvent.description)"
+                type="button"
+                @click="descriptionExpanded = !descriptionExpanded"
+                class="mt-2 text-xs font-semibold text-blue-700 hover:text-blue-800 hover:underline"
               >
-                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
+                {{ descriptionExpanded ? 'Show less' : 'Show more' }}
               </button>
-            </div>
 
-            <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div class="flex items-start gap-2">
-                <span class="text-blue-500 mt-0.5">📅</span>
-                <div>
-                  <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide">Date</p>
-                  <p class="text-sm text-gray-700 mt-0.5">{{ formatDate(selectedEvent.date) }}</p>
-                </div>
-              </div>
-              <div v-if="selectedEvent.time" class="flex items-start gap-2">
-                <span class="text-blue-500 mt-0.5">🕐</span>
-                <div>
-                  <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide">Time</p>
-                  <p class="text-sm text-gray-700 mt-0.5">{{ formatTime(selectedEvent.time) }}</p>
-                </div>
-              </div>
-              <div v-if="selectedEvent.location" class="flex items-start gap-2">
-                <span class="text-blue-500 mt-0.5">📍</span>
-                <div>
-                  <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide">Location</p>
-                  <p class="text-sm text-gray-700 mt-0.5">{{ selectedEvent.location }}</p>
-                </div>
+              <div v-if="selectedEvent.url" class="mt-4 pt-4 border-t border-gray-100">
+                <a
+                  :href="buildOutboundUrl(selectedEvent.url)"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-800 hover:underline"
+                >
+                  Open Event Page
+                  <span aria-hidden="true">↗</span>
+                </a>
+                <p class="mt-1 text-xs text-gray-400">
+                  Opened in a new window. Referred by Cafecito Software.
+                </p>
               </div>
             </div>
-
-            <p v-if="selectedEvent.description" class="mt-4 text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
-              {{ selectedEvent.description }}
-            </p>
           </div>
         </div>
-
-        <!-- Hint when nothing selected -->
-        <p v-else class="mt-4 text-center text-xs text-gray-400">
-          Click any event to see details
-        </p>
       </transition>
+
+      <!-- Hint when nothing selected -->
+      <p v-if="!selectedEvent" class="mt-4 text-center text-xs text-gray-400">
+        Click any event to see details
+      </p>
 
     </div>
   </div>
 </template>
+
+<style>
+.fc .fc-event {
+  cursor: pointer;
+}
+</style>

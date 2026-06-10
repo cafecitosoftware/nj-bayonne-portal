@@ -10,6 +10,13 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const rootDir = path.join(__dirname, '..')
 const indexPath = path.join(rootDir, 'public', 'data', 'events', 'index.json')
 
+function normalizeIcsContent(content) {
+    // Ensure no BOM and normalize line endings to CRLF (RFC5545 friendly).
+    const withoutBom = content.replace(/^\uFEFF/, '')
+    const normalizedNewlines = withoutBom.replace(/\r\n|\r|\n/g, '\n')
+    return normalizedNewlines.replace(/\n/g, '\r\n')
+}
+
 async function downloadFile(url, filePath) {
     return new Promise((resolve, reject) => {
         const parsedUrl = new URL(url)
@@ -27,17 +34,21 @@ async function downloadFile(url, filePath) {
                 return
             }
 
-            const fileStream = fs.createWriteStream(filePath)
-            response.pipe(fileStream)
-
-            fileStream.on('finish', () => {
-                fileStream.close()
-                console.log(`✓ Downloaded: ${path.relative(rootDir, filePath)}`)
-                resolve()
+            const chunks = []
+            response.on('data', chunk => chunks.push(chunk))
+            response.on('end', () => {
+                try {
+                    const rawContent = Buffer.concat(chunks).toString('utf8')
+                    const normalizedContent = normalizeIcsContent(rawContent)
+                    fs.writeFileSync(filePath, normalizedContent, 'utf8')
+                    console.log(`✓ Downloaded: ${path.relative(rootDir, filePath)}`)
+                    resolve()
+                } catch (writeErr) {
+                    reject(writeErr)
+                }
             })
 
-            fileStream.on('error', err => {
-                fs.unlink(filePath, () => {})
+            response.on('error', err => {
                 reject(err)
             })
         })
