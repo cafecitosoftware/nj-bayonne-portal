@@ -1,86 +1,34 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/events">Events</RouterLink>
-      </nav>
-    </div>
+  <header class="border-b border-gray-200 sticky top-0 bg-white">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <RouterLink to="/" class="text-xl font-semibold text-gray-900">
+        Bayonne
+      </RouterLink>
+      <ul class="flex gap-8 list-none">
+        <li><RouterLink to="/" class="text-gray-600 hover:text-gray-900 transition text-sm">Home</RouterLink></li>
+        <li><RouterLink to="/events" class="text-gray-600 hover:text-gray-900 transition text-sm">Events</RouterLink></li>
+        <li><RouterLink to="/about" class="text-gray-600 hover:text-gray-900 transition text-sm">About</RouterLink></li>
+      </ul>
+    </nav>
   </header>
 
-  <RouterView />
+  <main>
+    <RouterView />
+  </main>
+
+  <footer class="border-t border-gray-200 mt-24">
+    <div class="max-w-6xl mx-auto px-6 py-8 text-center text-gray-600 text-sm">
+      <p>&copy; 2026 Bayonne Portal. All rights reserved.</p>
+    </div>
+  </footer>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
+<script setup>
+import { RouterLink, RouterView } from 'vue-router'
+</script>
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+<style>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 </style>
