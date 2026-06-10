@@ -99,7 +99,8 @@ const cityStats = [
 ]
 
 const services = [
-  { icon: '📚', title: 'PublicLibrary', description: 'A', url:'https://www.bayonnelibrary.org/' },
+  { icon: '📚', title: 'Public Library', description: 'Public Library Services', url:'https://www.bayonnelibrary.org/' },
+  { icon: '🏫', title: 'School District', description: 'Public School Services', url:'https://www.bboed.org/' }
 ]
 
 function scrollToCalendar() {
