@@ -1,3 +1,7 @@
+<script setup>
+import EventCalendar from '../components/EventCalendar.vue'
+</script>
+
 <template>
   <div class="min-h-screen bg-white">
     <!-- Hero Section -->
@@ -11,6 +15,11 @@
       <button class="bg-black text-white px-8 py-3 rounded-lg font-medium hover:bg-gray-800 transition">
         Get Started
       </button>
+    </section>
+
+    <!-- Event Calendar Section -->
+    <section class="max-w-6xl mx-auto px-6 py-24 border-t border-gray-200">
+      <EventCalendar />
     </section>
 
     <!-- Features Section -->

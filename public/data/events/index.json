@@ -6,14 +6,16 @@
       "name": "Bayonne Public Library",
       "type": "json",
       "endpoint": "/data/events/library.json",
-      "enabled": true
+      "enabled": true,
+      "color": "#1E90FF"
     },
     {
       "id": "city",
       "name": "City of Bayonne",
       "type": "json",
       "endpoint": "/data/events/city.json",
-      "enabled": false
+      "enabled": true,
+      "color": "#FF6347"
     }
   ]
 }

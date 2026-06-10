@@ -4,6 +4,7 @@ const DEFAULT_INDEX_ENDPOINT = '/data/events/index.json'
 
 export function useEventSources(indexEndpoint = DEFAULT_INDEX_ENDPOINT) {
     const events = ref([])
+    const eventsLegend = ref({})
     const loading = ref(true)
     const error = ref(null)
 
@@ -31,12 +32,25 @@ export function useEventSources(indexEndpoint = DEFAULT_INDEX_ENDPOINT) {
                     const sourceRsponse = await fetch(source.endpoint)
                     let sourcePayload = await sourceRsponse.json()
                     console.log(`Loaded source ${source.name}:`, sourcePayload)
-                    // push the events from this source into the main events array
+                    const sourceName = source.name || 'Unnamed Source'
+                    const sourceColor = source.color || '#000000' // Default to black if no color provided
+                    // Add source name and color to each event
+                    sourcePayload.events = (sourcePayload.events || []).map(event => ({
+                        ...event,
+                        source: sourceName,
+                        color: sourceColor
+                    }))
                     events.value.push(...sourcePayload.events)
+                    eventsLegend.value[sourceName] = sourceColor
+
                 } catch (err) {
                     console.error(`Error loading source ${source.name}:`, err)
                 }
             })
+
+            // Sort events by date after all sources have been loaded
+            await Promise.all(sourcePromises)
+            events.value.sort((a, b) => new Date(a.date) - new Date(b.date))
 
         } catch (err) {
             error.value = err.message
@@ -52,6 +66,7 @@ export function useEventSources(indexEndpoint = DEFAULT_INDEX_ENDPOINT) {
 
     return {
         events,
+        eventsLegend,
         loading,
         error,
         reload: loadEvents
