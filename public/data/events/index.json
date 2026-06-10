@@ -8,7 +8,7 @@
       "endpoint": "/data/events/library.json",
       "enabled": true
     },
-        {
+    {
       "id": "city",
       "name": "City of Bayonne",
       "type": "json",

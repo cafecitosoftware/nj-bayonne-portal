@@ -1,0 +1,101 @@
+{
+  "category": "City",
+  "events": [
+    {
+      "id": "city-new-year-01",
+      "title": "New Year's Day Parade",
+      "date": "2026-01-01",
+      "time": "11:00",
+      "location": "Broadway Avenue",
+      "description": "Annual celebration featuring marching bands, floats, and community groups."
+    },
+    {
+      "id": "city-winter-market-01",
+      "title": "Winter Farmers Market",
+      "date": "2026-02-07",
+      "time": "09:00",
+      "location": "City Hall Plaza",
+      "description": "Fresh produce, baked goods, and local crafts. Every Saturday through March."
+    },
+    {
+      "id": "city-st-patrick-01",
+      "title": "St. Patrick's Day Celebration",
+      "date": "2026-03-17",
+      "time": "12:00",
+      "location": "Veterans Park",
+      "description": "Live Irish music, food vendors, and family activities."
+    },
+    {
+      "id": "city-earth-day-01",
+      "title": "Earth Day Cleanup",
+      "date": "2026-04-22",
+      "time": "09:00",
+      "location": "Waterfront Park",
+      "description": "Community environmental cleanup. Volunteers of all ages welcome."
+    },
+    {
+      "id": "city-memorial-day-01",
+      "title": "Memorial Day Ceremony",
+      "date": "2026-05-25",
+      "time": "10:00",
+      "location": "Veterans Monument, Veterans Park",
+      "description": "Honor ceremony for fallen service members."
+    },
+    {
+      "id": "city-summer-concert-01",
+      "title": "Summer Concert Series - Jazz Night",
+      "date": "2026-07-15",
+      "time": "19:00",
+      "location": "Waterfront Park Amphitheater",
+      "description": "Free outdoor concert. Bring chairs and blankets. Concessions available."
+    },
+    {
+      "id": "city-fireworks-01",
+      "title": "Independence Day Fireworks",
+      "date": "2026-07-04",
+      "time": "20:30",
+      "location": "Waterfront Park",
+      "description": "Spectacular fireworks display. Festivities begin at 6:00 PM."
+    },
+    {
+      "id": "city-labor-day-01",
+      "title": "Labor Day Festival",
+      "date": "2026-09-07",
+      "time": "10:00",
+      "location": "Veterans Park",
+      "description": "Food, games, music, and community booths. Last hurrah of summer."
+    },
+    {
+      "id": "city-halloween-01",
+      "title": "Trunk or Treat",
+      "date": "2026-10-31",
+      "time": "16:00",
+      "location": "City Hall Parking Lot",
+      "description": "Safe trick-or-treating with decorated car trunks and local organizations."
+    },
+    {
+      "id": "city-thanksgiving-01",
+      "title": "Thanksgiving Day Parade",
+      "date": "2026-11-26",
+      "time": "09:00",
+      "location": "Broadway Avenue",
+      "description": "Classic holiday parade with marching bands and holiday floats."
+    },
+    {
+      "id": "city-holiday-tree-01",
+      "title": "Holiday Tree Lighting Ceremony",
+      "date": "2026-11-28",
+      "time": "17:00",
+      "location": "City Hall Plaza",
+      "description": "Light display, caroling, and holiday cheer to kick off the season."
+    },
+    {
+      "id": "city-christmas-01",
+      "title": "Christmas Day Community Dinner",
+      "date": "2026-12-25",
+      "time": "12:00",
+      "location": "Community Center",
+      "description": "Free dinner and fellowship for all community members."
+    }
+  ]
+}
