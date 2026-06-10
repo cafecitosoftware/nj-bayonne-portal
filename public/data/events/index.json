@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "sources": [
+    {
+      "id": "library",
+      "name": "Bayonne Public Library",
+      "type": "json",
+      "endpoint": "/data/events/library.json",
+      "enabled": true
+    },
+        {
+      "id": "city",
+      "name": "City of Bayonne",
+      "type": "json",
+      "endpoint": "/data/events/city.json",
+      "enabled": false
+    }
+  ]
+}
