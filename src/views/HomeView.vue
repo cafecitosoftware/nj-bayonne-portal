@@ -14,12 +14,13 @@
           Your one-stop hub for city news, upcoming events, and community resources in Bayonne, New Jersey.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <RouterLink
-            to="/events"
+          <button
+            type="button"
+            @click="scrollToCalendar"
             class="bg-yellow-400 text-blue-900 font-bold px-8 py-3 rounded-full hover:bg-yellow-300 transition shadow-lg text-lg"
           >
             📅 View Events
-          </RouterLink>
+          </button>
           <RouterLink
             to="/about"
             class="bg-white/10 border border-white/40 text-white font-bold px-8 py-3 rounded-full hover:bg-white/20 transition text-lg"
@@ -41,7 +42,7 @@
     </section>
 
     <!-- Event Calendar Section -->
-    <section class="max-w-6xl mx-auto px-6 py-16">
+    <section id="event-calendar" class="max-w-6xl mx-auto px-6 py-16">
       <div class="flex items-center justify-between mb-8">
         <div>
           <h2 class="text-3xl font-bold text-gray-900">Upcoming Events</h2>
@@ -62,8 +63,8 @@
     <!-- City Services Section -->
     <section class="bg-white border-t border-gray-100 py-16 px-6">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold text-gray-900 mb-2 text-center">City Services</h2>
-        <p class="text-gray-500 text-center mb-10">Everything you need, all in one place.</p>
+        <h2 class="text-3xl font-bold text-gray-900 mb-2 text-center">Data Sources</h2>
+        <p class="text-gray-500 text-center mb-10">All the sources of data that power this city portal.</p>
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
           <div
             v-for="service in services"
@@ -73,47 +74,15 @@
             <span class="text-4xl mb-3">{{ service.icon }}</span>
             <h3 class="font-semibold text-gray-800 text-sm">{{ service.title }}</h3>
             <p class="text-gray-400 text-xs mt-1">{{ service.description }}</p>
+            <a :href="service.url" target="_blank" class="text-blue-500 text-xs mt-2 hover:underline">
+              Visit Site
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Latest News Section -->
-    <section class="max-w-6xl mx-auto px-6 py-16">
-      <h2 class="text-3xl font-bold text-gray-900 mb-2">Latest News</h2>
-      <p class="text-gray-500 mb-10">Stay up to date with what's happening in Bayonne.</p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <article
-          v-for="news in newsItems"
-          :key="news.title"
-          class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-200"
-        >
-          <div :class="`h-2 ${news.color}`"></div>
-          <div class="p-6">
-            <span :class="`text-xs font-semibold uppercase tracking-wide px-2 py-1 rounded-full ${news.badgeColor}`">
-              {{ news.category }}
-            </span>
-            <h3 class="font-bold text-gray-800 text-base mt-3 mb-2">{{ news.title }}</h3>
-            <p class="text-gray-500 text-sm leading-relaxed">{{ news.excerpt }}</p>
-            <p class="text-xs text-gray-400 mt-4">{{ news.date }}</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- CTA Banner -->
-    <section class="bg-blue-900 py-16 px-6 text-center text-white">
-      <h2 class="text-3xl font-bold mb-4">Stay Connected with Your City</h2>
-      <p class="text-blue-200 mb-8 max-w-xl mx-auto">
-        Sign up for alerts, follow us on social media, or visit City Hall for in-person assistance.
-      </p>
-      <a
-        href="mailto:info@bayonnenj.gov"
-        class="inline-block bg-yellow-400 text-blue-900 font-bold px-8 py-3 rounded-full hover:bg-yellow-300 transition shadow-lg text-lg"
-      >
-        📧 Contact City Hall
-      </a>
-    </section>
+    <!-- CTA Banner -->   
 
   </div>
 </template>
@@ -130,40 +99,14 @@ const cityStats = [
 ]
 
 const services = [
-  { icon: '🏛️', title: 'City Hall', description: 'Permits & licenses' },
-  { icon: '🚒', title: 'Public Safety', description: 'Police & fire' },
-  { icon: '🗑️', title: 'Public Works', description: 'Trash & roads' },
-  { icon: '📚', title: 'Library', description: 'Books & programs' },
-  { icon: '🌳', title: 'Parks & Rec', description: 'Parks & sports' },
-  { icon: '🏫', title: 'Education', description: 'Schools & resources' },
-  { icon: '🚌', title: 'Transit', description: 'Bus & transit info' },
-  { icon: '💼', title: 'Business', description: 'Local business support' },
+  { icon: '📚', title: 'PublicLibrary', description: 'A', url:'https://www.bayonnelibrary.org/' },
 ]
 
-const newsItems = [
-  {
-    title: 'Summer Road Improvement Projects Begin',
-    category: 'Public Works',
-    excerpt: 'Scheduled road resurfacing along Avenue C and Broadway starts next week.',
-    date: 'June 5, 2026',
-    color: 'bg-blue-500',
-    badgeColor: 'bg-blue-50 text-blue-600',
-  },
-  {
-    title: 'New Community Park Opening Ceremony',
-    category: 'Parks & Rec',
-    excerpt: 'Join us for the grand opening of the renovated Hudson Park waterfront this Saturday.',
-    date: 'June 3, 2026',
-    color: 'bg-green-500',
-    badgeColor: 'bg-green-50 text-green-600',
-  },
-  {
-    title: 'City Budget Meeting Schedule Released',
-    category: 'City Hall',
-    excerpt: 'Public meetings for the 2026–2027 fiscal year budget review are now scheduled.',
-    date: 'May 28, 2026',
-    color: 'bg-yellow-400',
-    badgeColor: 'bg-yellow-50 text-yellow-600',
-  },
-]
+function scrollToCalendar() {
+  const section = document.getElementById('event-calendar')
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+}
+
 </script>
