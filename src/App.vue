@@ -5,8 +5,9 @@
     <header class="bg-blue-900 shadow-lg sticky top-0 z-50">
       <nav class="max-w-6xl mx-auto px-6 py-0 flex items-center justify-between h-16">
         <!-- Brand -->
-        <RouterLink to="/" class="flex items-center gap-2 text-white font-extrabold text-lg tracking-wide hover:text-yellow-300 transition">
-          🏙️ City of Bayonne
+        <RouterLink to="/" class="flex items-center gap-2 hover:opacity-90 transition">
+          <span class="text-white font-extrabold text-lg tracking-wide hover:text-yellow-300 transition">🏙️ Bayonne Portal</span>
+          <span class="hidden sm:inline-block bg-yellow-400 text-blue-900 text-xs font-bold px-2 py-0.5 rounded-full">Community</span>
         </RouterLink>
 
         <!-- Desktop Links -->
@@ -59,11 +60,10 @@
     <footer class="bg-blue-900 text-blue-200">
       <div class="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
-          <h3 class="text-white font-semibold text-lg mb-3">City of Bayonne</h3>
+          <h3 class="text-white font-semibold text-lg mb-3">☕ Cafecito Software</h3>
           <p class="text-sm leading-relaxed">
-            630 Avenue C<br />
-            Bayonne, NJ 07002<br />
-            (201) 858-6000
+            An independent community project built by a Bayonne resident.
+            No affiliation with the City of Bayonne.
           </p>
         </div>
         <div>
@@ -75,13 +75,23 @@
           </ul>
         </div>
         <div>
-          <h3 class="text-white font-semibold text-lg mb-3">Office Hours</h3>
-          <p class="text-sm leading-relaxed">Mon – Fri: 8:30 AM – 4:30 PM</p>
-          <p class="text-sm mt-2">info@bayonnenj.gov</p>
+          <h3 class="text-white font-semibold text-lg mb-3">City of Bayonne</h3>
+          <p class="text-sm leading-relaxed">
+            630 Avenue C, Bayonne, NJ 07002<br />
+            (201) 858-6000
+          </p>
+          <a href="https://www.bayonnenj.org" target="_blank" rel="noopener noreferrer"
+            class="inline-block mt-2 text-xs text-yellow-400 hover:text-yellow-300 transition"
+          >
+            Official City Website →
+          </a>
         </div>
       </div>
-      <div class="border-t border-blue-700 py-4 text-center text-xs text-blue-400">
-        © {{ new Date().getFullYear() }} City of Bayonne, NJ. All rights reserved.
+      <div class="border-t border-blue-700 py-4 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-blue-400">
+          <p>© {{ new Date().getFullYear() }} Cafecito Software. Built with ☕ in Bayonne, NJ.</p>
+          <p class="text-center">Not affiliated with or endorsed by the City of Bayonne.</p>
+        </div>
       </div>
     </footer>
 
@@ -96,7 +106,6 @@ const mobileOpen = ref(false)
 
 const navLinks = [
   { path: '/', label: '🏠 Home' },
-  { path: '/events', label: '📅 Events' },
   { path: '/about', label: 'ℹ️ About' },
 ]
 </script>
