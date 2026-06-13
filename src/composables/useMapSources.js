@@ -1,6 +1,20 @@
 import { onMounted, ref } from 'vue'
 
 const DEFAULT_INDEX_ENDPOINT = '/data/maps/index.json'
+const ASSET_BASE_URL = import.meta.env.BASE_URL || '/'
+
+function resolveAssetUrl(endpoint) {
+    if (!endpoint) {
+        return null
+    }
+
+    if (/^https?:\/\//i.test(endpoint)) {
+        return endpoint
+    }
+
+    const normalized = endpoint.replace(/^\.\//, '').replace(/^\//, '')
+    return `${ASSET_BASE_URL}${normalized}`
+}
 
 // Function to load JSON sources
 export function useMapSources(indexEndpoint = DEFAULT_INDEX_ENDPOINT) {
@@ -17,10 +31,14 @@ export function useMapSources(indexEndpoint = DEFAULT_INDEX_ENDPOINT) {
 
         // Backward compatibility for older payloads where map data was stored under /data/maps.
         if (endpoint.startsWith('/data/events/') && endpoint.endsWith('.json')) {
-            return endpoint.replace('/data/events/', '/data/maps/')
+            endpoint = endpoint.replace('/data/events/', '/data/maps/')
         }
 
-        return endpoint
+        if (endpoint.startsWith('./data/events/') && endpoint.endsWith('.json')) {
+            endpoint = endpoint.replace('./data/events/', './data/maps/')
+        }
+
+        return resolveAssetUrl(endpoint)
     }
 
     const fetchSource = async (source) => {
@@ -60,7 +78,8 @@ export function useMapSources(indexEndpoint = DEFAULT_INDEX_ENDPOINT) {
         loading.value = true
         error.value = null
         try {
-            const indexResponse = await fetch(indexEndpoint)
+            const resolvedIndexEndpoint = resolveAssetUrl(indexEndpoint)
+            const indexResponse = await fetch(resolvedIndexEndpoint)
             if (!indexResponse.ok) {
                 throw new Error(`Failed to load map index: ${indexResponse.statusText}`)
             }

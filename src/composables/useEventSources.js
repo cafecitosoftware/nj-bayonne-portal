@@ -1,6 +1,15 @@
 import { onMounted, ref } from 'vue'
 
 const DEFAULT_INDEX_ENDPOINT = '/data/events/index.json'
+const ASSET_BASE_URL = import.meta.env.BASE_URL || '/'
+
+function resolveAssetUrl(endpoint) {
+    if (!endpoint) return null
+    if (/^https?:\/\//i.test(endpoint)) return endpoint
+
+    const normalized = endpoint.replace(/^\.\//, '').replace(/^\//, '')
+    return `${ASSET_BASE_URL}${normalized}`
+}
 
 function decodeIcsText(value = '') {
     return value
@@ -24,7 +33,7 @@ function applySourceMetaToEvents(rawEvents = [], sourceName, sourceColor) {
 // Function to load JSON sources
 async function loadJsonSource(source) {
     try {
-        const response = await fetch(source.endpoint)
+        const response = await fetch(resolveAssetUrl(source.endpoint))
         if (!response.ok) {
             throw new Error(`Failed to load JSON source ${source.name}: ${response.statusText}`)
         }
@@ -49,7 +58,7 @@ async function loadJsonSource(source) {
 // Function to load iCal sources
 async function loadIcalSource(source) {
     try {
-        const response = await fetch(source.endpoint)
+        const response = await fetch(resolveAssetUrl(source.endpoint))
         if (!response.ok) {
             throw new Error(`Failed to load iCal source ${source.name}: ${response.statusText}`)
         }
@@ -214,7 +223,8 @@ export function useEventSources(indexEndpoint = DEFAULT_INDEX_ENDPOINT) {
         eventsLegend.value = {}
 
         try {
-            const indexResponse = await fetch(indexEndpoint)
+            const resolvedIndexEndpoint = resolveAssetUrl(indexEndpoint)
+            const indexResponse = await fetch(resolvedIndexEndpoint)
             if (!indexResponse.ok) {
                 throw new Error(`Failed to load event index: ${indexResponse.statusText}`)
             }
