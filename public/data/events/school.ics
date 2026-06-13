@@ -1,0 +1,307 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Bayonne School District/finalsite//NONSGML v1.0//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:Assessment Calendar - Comm Schools
+BEGIN:VEVENT
+UID:8263@www.bboed.org
+DTSTAMP:20260613T175810Z
+DTSTART;VALUE=DATE:20260615
+SUMMARY:Abbreviated Day - Students Only - Staff Training Day
+DESCRIPTION:\nAbbreviated Session for all Students & Staff\n    \nDismissal Times:\n    \nBHS - 1:11PM\n    \nCommunity Schools - 12:40PM\n\n\n
+PRIORITY:0
+END:VEVENT
+BEGIN:VEVENT
+UID:8264@www.bboed.org
+DTSTAMP:20260613T175810Z
+DTSTART;VALUE=DATE:20260616
+SUMMARY:Abbreviated Day - Students Only - Staff Training Day
+DESCRIPTION:\nAbbreviated Session for all Students & Staff\n    \nDismissal Times:\n    \nBHS - 1:11PM\n    \nCommunity Schools - 12:40PM\n\n\n
+PRIORITY:0
+END:VEVENT
+BEGIN:VEVENT
+UID:8265@www.bboed.org
+DTSTAMP:20260613T175810Z
+DTSTART;VALUE=DATE:20260617
+SUMMARY:Abbreviated Day - Students & Staff
+DESCRIPTION:\nAbbreviated Session for all Students & Staff\n    \nDismissal Times:\n    \nBHS - 1:11PM\n    \nCommunity Schools - 12:40PM\n\n\n
+PRIORITY:0
+END:VEVENT
+BEGIN:VEVENT
+UID:8766@www.bboed.org
+DTSTAMP:20260613T175810Z
+DTSTART;VALUE=DATE:20260618
+SUMMARY:Abbreviated Day - Students & Staff
+DESCRIPTION:\n** Due to unavoidable snow days\, 4 additional days were aded to the calendar for NJDOE compliance.**Abbreviated Session for all Students & Staff\n    \nDismissal Times:\n    \nBHS - 1:11PM\n    \nCommunity Schools - 12:40PM\n\n\n
+PRIORITY:0
+END:VEVENT
+BEGIN:VEVENT
+UID:8267@www.bboed.org
+DTSTAMP:20260613T175810Z
+DTSTART;VALUE=DATE:20260619
+SUMMARY:No School - Students & Staff - Juneteenth
+DESCRIPTION:
+PRIORITY:0
+END:VEVENT
+BEGIN:VEVENT
+UID:8767@www.bboed.org
+DTSTAMP:20260613T175810Z
+DTSTART;VALUE=DATE:20260622
+SUMMARY:Abbreviated Day - Students & Staff
+DESCRIPTION:\n** Due to unavoidable snow days\, 4 additional days were aded to the calendar for NJDOE compliance.**\n    \nAbbreviated Session for all Students & Staff\n    \nDismissal Times:\n    \nBHS - 1:11PM\n    \nCommunity Schools - 12:40PM\n\n\n
+PRIORITY:0
+END:VEVENT
+BEGIN:VEVENT
+UID:8768@www.bboed.org
+DTSTAMP:20260613T175810Z
+DTSTART;VALUE=DATE:20260623
+SUMMARY:Abbreviated Day - Students & Staff
+DESCRIPTION:\n** Due to unavoidable snow days\, 4 additional days were aded to the calendar for NJDOE compliance.**Abbreviated Session for all Students & Staff\n    \nDismissal Times:\n    \nBHS - 1:11PM\n    \nCommunity Schools - 12:40PM\n\n\n
+PRIORITY:0
+END:VEVENT
+BEGIN:VEVENT
+UID:8769@www.bboed.org
+DTSTAMP:20260613T175810Z
+DTSTART;VALUE=DATE:20260624
+SUMMARY:Abbreviated Day - Students & Staff
+DESCRIPTION:\n** Due to unavoidable snow days\, 4 additional days were aded to the calendar for NJDOE compliance.**Abbreviated Session for all Students & Staff\n    \nDismissal Times:\n    \nBHS - 1:11PM\n    \nCommunity Schools - 12:40PM\n\n\n
+PRIORITY:0
+END:VEVENT
+BEGIN:VEVENT
+UID:8770@www.bboed.org
+DTSTAMP:20260613T175810Z
+DTSTART;VALUE=DATE:20260625
+SUMMARY:Abbreviated Day - Students & Staff
+DESCRIPTION:\n** Due to unavoidable snow days\, 4 additional days were aded to the calendar for NJDOE compliance.**\n    \nAbbreviated Session for all Students & Staff\n    \nDismissal Times:\n    \nBHS - 1:11PM\n    \nCommunity Schools - 12:40PM\n\n\n
+PRIORITY:0
+END:VEVENT
+BEGIN:VEVENT
+UID:8765@www.bboed.org
+DTSTAMP:20260613T175810Z
+DTSTART;VALUE=DATE:20260626
+SUMMARY:Abbreviated Day - Students & Staff - Last Day of School
+DESCRIPTION:\n** Due to unavoidable snow days\, 4 additional days were aded to the calendar for NJDOE compliance.**\n    \nAbbreviated Session for all Students & Staff\n    \nDismissal Times:\n    \nBHS - 1:11PM\n    \nCommunity Schools - 12:40PM\n\n\n
+PRIORITY:0
+END:VEVENT
+BEGIN:VEVENT
+UID:9210@www.bboed.org
+DTSTAMP:20260613T175810Z
+DTSTART:20260630T093000
+DTEND:20260630T110000
+SUMMARY:SUMMER ATHLETIC PHYSICAL
+DESCRIPTION:\n Click for more information or to register! \n    \n \n\n\n
+LOCATION:BHS - Main Health Office
+PRIORITY:0
+END:VEVENT
+BEGIN:VEVENT
+UID:8218@www.bboed.org
+DTSTAMP:20260613T175810Z
+DTSTART:20260630T173000
+DTEND:20260630T210000
+SUMMARY:BBOED Meeting
+DESCRIPTION:\n  Location:   #9 Washington Community School - 191 Avenue B\n    \n \n    \n  5:30pm Open Workshop and Agenda Session  \n       	* Public may attend but may  not  participate\n       \n  6:00pm Regular Meeting  \n       	* Open to the public\n
+LOCATION:Washington Community School
+PRIORITY:0
+END:VEVENT
+BEGIN:VEVENT
+UID:9212@www.bboed.org
+DTSTAMP:20260613T175810Z
+DTSTART:20260707T093000
+DTEND:20260707T110000
+SUMMARY:SUMMER ATHLETIC PHYSICAL
+DESCRIPTION:\n Click for more information or to register! \n    \n \n\n\n
+LOCATION:BHS - Main Health Office
+PRIORITY:0
+END:VEVENT
+BEGIN:VEVENT
+UID:9213@www.bboed.org
+DTSTAMP:20260613T175810Z
+DTSTART:20260709T093000
+DTEND:20260709T110000
+SUMMARY:SUMMER ATHLETIC PHYSICAL
+DESCRIPTION:\n Click for more information or to register! \n    \n \n\n\n
+LOCATION:BHS - Main Health Office
+PRIORITY:0
+END:VEVENT
+BEGIN:VEVENT
+UID:9214@www.bboed.org
+DTSTAMP:20260613T175810Z
+DTSTART:20260714T093000
+DTEND:20260714T110000
+SUMMARY:SUMMER ATHLETIC PHYSICAL
+DESCRIPTION:\n Click for more information or to register! \n    \n \n\n\n
+LOCATION:BHS - Main Health Office
+PRIORITY:0
+END:VEVENT
+BEGIN:VEVENT
+UID:9215@www.bboed.org
+DTSTAMP:20260613T175810Z
+DTSTART:20260716T093000
+DTEND:20260716T110000
+SUMMARY:SUMMER ATHLETIC PHYSICAL
+DESCRIPTION:\n Click for more information or to register! \n    \n \n\n\n
+LOCATION:BHS - Main Health Office
+PRIORITY:0
+END:VEVENT
+BEGIN:VEVENT
+UID:9216@www.bboed.org
+DTSTAMP:20260613T175810Z
+DTSTART:20260721T093000
+DTEND:20260721T110000
+SUMMARY:SUMMER ATHLETIC PHYSICAL
+DESCRIPTION:\n Click for more information or to register! \n    \n \n\n\n
+LOCATION:BHS - Main Health Office
+PRIORITY:0
+END:VEVENT
+BEGIN:VEVENT
+UID:9217@www.bboed.org
+DTSTAMP:20260613T175810Z
+DTSTART:20260723T093000
+DTEND:20260723T110000
+SUMMARY:SUMMER ATHLETIC PHYSICAL
+DESCRIPTION:\n Click for more information or to register! \n    \n \n\n\n
+LOCATION:BHS - Main Health Office
+PRIORITY:0
+END:VEVENT
+BEGIN:VEVENT
+UID:9218@www.bboed.org
+DTSTAMP:20260613T175810Z
+DTSTART:20260728T093000
+DTEND:20260728T110000
+SUMMARY:SUMMER ATHLETIC PHYSICAL
+DESCRIPTION:\n Click for more information or to register! \n    \n \n\n\n
+LOCATION:BHS - Main Health Office
+PRIORITY:0
+END:VEVENT
+BEGIN:VEVENT
+UID:9219@www.bboed.org
+DTSTAMP:20260613T175810Z
+DTSTART:20260730T093000
+DTEND:20260730T110000
+SUMMARY:SUMMER ATHLETIC PHYSICAL
+DESCRIPTION:\n Click for more information or to register! \n    \n \n\n\n
+LOCATION:BHS - Main Health Office
+PRIORITY:0
+END:VEVENT
+BEGIN:VEVENT
+UID:9220@www.bboed.org
+DTSTAMP:20260613T175810Z
+DTSTART:20260804T093000
+DTEND:20260804T110000
+SUMMARY:SUMMER ATHLETIC PHYSICAL
+DESCRIPTION:\n Click for more information or to register! \n    \n \n\n\n
+LOCATION:BHS - Main Health Office
+PRIORITY:0
+END:VEVENT
+BEGIN:VEVENT
+UID:9221@www.bboed.org
+DTSTAMP:20260613T175810Z
+DTSTART:20260806T093000
+DTEND:20260806T110000
+SUMMARY:SUMMER ATHLETIC PHYSICAL
+DESCRIPTION:\n Click for more information or to register! \n    \n \n\n\n
+LOCATION:BHS - Main Health Office
+PRIORITY:0
+END:VEVENT
+BEGIN:VEVENT
+UID:9222@www.bboed.org
+DTSTAMP:20260613T175810Z
+DTSTART:20260811T093000
+DTEND:20260811T110000
+SUMMARY:SUMMER ATHLETIC PHYSICAL
+DESCRIPTION:\n Click for more information or to register! \n    \n \n\n\n
+LOCATION:BHS - Main Health Office
+PRIORITY:0
+END:VEVENT
+BEGIN:VEVENT
+UID:9223@www.bboed.org
+DTSTAMP:20260613T175810Z
+DTSTART:20260813T093000
+DTEND:20260813T110000
+SUMMARY:SUMMER ATHLETIC PHYSICAL
+DESCRIPTION:\n Click for more information or to register! \n    \n \n\n\n
+LOCATION:BHS - Main Health Office
+PRIORITY:0
+END:VEVENT
+BEGIN:VEVENT
+UID:9224@www.bboed.org
+DTSTAMP:20260613T175810Z
+DTSTART:20260818T093000
+DTEND:20260818T110000
+SUMMARY:SUMMER ATHLETIC PHYSICAL
+DESCRIPTION:\n Click for more information or to register! \n    \n \n\n\n
+LOCATION:BHS - Main Health Office
+PRIORITY:0
+END:VEVENT
+BEGIN:VEVENT
+UID:9225@www.bboed.org
+DTSTAMP:20260613T175810Z
+DTSTART:20260820T093000
+DTEND:20260820T110000
+SUMMARY:SUMMER ATHLETIC PHYSICAL
+DESCRIPTION:\n Click for more information or to register! \n    \n \n\n\n
+LOCATION:BHS - Main Health Office
+PRIORITY:0
+END:VEVENT
+BEGIN:VEVENT
+UID:8219@www.bboed.org
+DTSTAMP:20260613T175810Z
+DTSTART:20260825T173000
+DTEND:20260825T210000
+SUMMARY:BBOED Meeting
+DESCRIPTION:\n  Location:   #10 Woodrow Wilson Community School - 101 West 56th Street\n    \n \n    \n  5:30pm Open Workshop and Agenda Session  \n       	* Public may attend but may  not  participate\n       \n  6:00pm Regular Meeting  \n       	* Open to the public\n
+LOCATION:Woodrow Wilson School
+PRIORITY:0
+END:VEVENT
+BEGIN:VEVENT
+UID:8220@www.bboed.org
+DTSTAMP:20260613T175810Z
+DTSTART:20260922T173000
+DTEND:20260922T210000
+SUMMARY:BBOED Meeting
+DESCRIPTION:\n  Location:   #12 John M. Bailey School - 75 West 10th Street\n    \n \n    \n  5:30pm Open Workshop and Agenda Session  \n       	* Public may attend but may  not  participate\n       \n  6:00pm Regular Meeting  \n       	* Open to the public\n
+LOCATION:John M. Bailey School
+PRIORITY:0
+END:VEVENT
+BEGIN:VEVENT
+UID:8221@www.bboed.org
+DTSTAMP:20260613T175810Z
+DTSTART:20261027T173000
+DTEND:20261027T210000
+SUMMARY:BBOED Meeting
+DESCRIPTION:\n  Location:   #6 Horace Mann School - 25 West 38th Street\n    \n \n    \n  5:30pm Open Workshop and Agenda Session  \n       	* Public may attend but may  not  participate\n       \n  6:00pm Regular Meeting  \n       	* Open to the public\n
+LOCATION:Horace Mann School
+PRIORITY:0
+END:VEVENT
+BEGIN:VEVENT
+UID:8222@www.bboed.org
+DTSTAMP:20260613T175810Z
+DTSTART:20261124T173000
+DTEND:20261124T210000
+SUMMARY:BBOED Meeting
+DESCRIPTION:\n  Location:   #1 Henry E. Harris Community School - 135 Avenue C\n    \n \n    \n  5:30pm Open Workshop and Agenda Session  \n       	* Public may attend but may  not  participate\n       \n  6:00pm Regular Meeting  \n       	* Open to the public\n
+LOCATION:Henry E. Harris Community School
+PRIORITY:0
+END:VEVENT
+BEGIN:VEVENT
+UID:8223@www.bboed.org
+DTSTAMP:20260613T175810Z
+DTSTART:20261215T173000
+DTEND:20261215T210000
+SUMMARY:BBOED Meeting
+DESCRIPTION:\n  Location:   #4 Mary J. Donohoe School - 25 East 5th Street\n    \n \n    \n  5:30pm Open Workshop and Agenda Session  \n       	* Public may attend but may  not  participate\n       \n  6:00pm Regular Meeting  \n       	* Open to the public\n
+LOCATION:Mary J. Donohoe School
+PRIORITY:0
+END:VEVENT
+BEGIN:VEVENT
+UID:8224@www.bboed.org
+DTSTAMP:20260613T175810Z
+DTSTART:20270105T173000
+DTEND:20270105T210000
+SUMMARY:BBOED Organization Meeting
+DESCRIPTION:\n  Location:   #8 William Shemin Midtown Community School - 550 Avenue A\n    \n \n    \n  5:30pm Open Workshop and Agenda Session  \n       	* Public may attend but may  not  participate\n       \n  6:00pm Regular Meeting  \n       	* Open to the public\n
+LOCATION:William Shemin Midtown Community School
+PRIORITY:0
+END:VEVENT
+
+END:VCALENDAR
