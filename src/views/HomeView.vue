@@ -14,13 +14,18 @@
           Your one-stop hub for city news, upcoming events, and community resources in Bayonne, New Jersey.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <button
-            type="button"
-            @click="scrollToCalendar"
+          <RouterLink
+            to="/events"
             class="bg-yellow-400 text-blue-900 font-bold px-8 py-3 rounded-full hover:bg-yellow-300 transition shadow-lg text-lg"
           >
             📅 View Events
-          </button>
+          </RouterLink>
+          <RouterLink
+            to="/maps"
+            class="bg-blue-500 text-white font-bold px-8 py-3 rounded-full hover:bg-blue-400 transition shadow-lg text-lg"
+          >
+            🗺️ Explore Maps
+          </RouterLink>
           <RouterLink
             to="/about"
             class="bg-white/10 border border-white/40 text-white font-bold px-8 py-3 rounded-full hover:bg-white/20 transition text-lg"
@@ -41,22 +46,31 @@
       </div>
     </section>
 
-    <!-- Event Calendar Section -->
-    <section id="event-calendar" class="max-w-6xl mx-auto px-6 py-16">
-      <div class="flex items-center justify-between mb-8">
-        <div>
-          <h2 class="text-3xl font-bold text-gray-900">Upcoming Events</h2>
-          <p class="text-gray-500 mt-1">Stay informed about what's happening in the city.</p>
-        </div>
+    <!-- Quick Access Section -->
+    <section class="max-w-6xl mx-auto px-6 py-16">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-gray-900">Explore Bayonne</h2>
+        <p class="text-gray-500 mt-2">Choose a section to browse events and map resources.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <RouterLink
           to="/events"
-          class="hidden sm:inline-block text-blue-700 font-semibold hover:underline text-sm"
+          class="group bg-white rounded-2xl border border-gray-200 p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all"
         >
-          View All →
+          <p class="text-sm font-semibold uppercase tracking-wide text-blue-600">Events</p>
+          <h3 class="text-2xl font-bold text-gray-900 mt-2">Community Calendar</h3>
+          <p class="text-gray-500 mt-2">Browse upcoming activities from libraries, schools, and other local sources.</p>
+          <p class="text-blue-700 font-semibold mt-5 group-hover:underline">Open Events Page →</p>
         </RouterLink>
-      </div>
-      <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
-        <EventCalendar />
+        <RouterLink
+          to="/maps"
+          class="group bg-white rounded-2xl border border-gray-200 p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all"
+        >
+          <p class="text-sm font-semibold uppercase tracking-wide text-green-600">Maps</p>
+          <h3 class="text-2xl font-bold text-gray-900 mt-2">City Data Map</h3>
+          <p class="text-gray-500 mt-2">View map pins by source with filters, legend controls, and location details.</p>
+          <p class="text-blue-700 font-semibold mt-5 group-hover:underline">Open Maps Page →</p>
+        </RouterLink>
       </div>
     </section>
 
@@ -89,7 +103,6 @@
 
 <script setup>
 import { RouterLink } from 'vue-router'
-import EventCalendar from '../components/EventCalendar.vue'
 
 const cityStats = [
   { value: '72K+', label: 'Residents' },
@@ -102,12 +115,5 @@ const services = [
   { icon: '📚', title: 'Public Library', description: 'Public Library Services', url:'https://www.bayonnelibrary.org/' },
   { icon: '🏫', title: 'School District', description: 'Public School Services', url:'https://www.bboed.org/' }
 ]
-
-function scrollToCalendar() {
-  const section = document.getElementById('event-calendar')
-  if (section) {
-    section.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }
-}
 
 </script>

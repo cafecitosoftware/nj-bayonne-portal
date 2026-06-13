@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Stephen R. Gregg Park",
+    "lat": 40.6817,
+    "lng": -74.1187,
+    "description": "Hudson County waterfront park with trails, fields, and play areas."
+  },
+  {
+    "name": "Dennis P. Collins Park",
+    "lat": 40.6645,
+    "lng": -74.1062,
+    "description": "Large city park featuring sports fields, open lawns, and playgrounds."
+  },
+  {
+    "name": "Juliet Street Mini Park",
+    "lat": 40.6769,
+    "lng": -74.1114,
+    "description": "Neighborhood green space with benches and shaded seating."
+  },
+  {
+    "name": "Sgt. Anthony Park",
+    "lat": 40.6694,
+    "lng": -74.1111,
+    "description": "Community park area with playground amenities and walking paths."
+  },
+  {
+    "name": "Waterfront Promenade Park",
+    "lat": 40.6538,
+    "lng": -74.1129,
+    "description": "Scenic shoreline access area with views and a pedestrian walkway."
+  }
+]

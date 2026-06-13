@@ -8,41 +8,6 @@ X-WR-CALDESC:
 X-WR-TIMEZONE:America/New_York
 X-PUBLISHED-TTL:PT15M
 BEGIN:VEVENT
-DTSTART:20260511T143000Z
-DTEND:20260511T151500Z
-DTSTAMP:20260511T000000Z
-SUMMARY:Lapsit Program (Ages 18-24 Months)
-DESCRIPTION:The Lapsit program is Mondays from 10:30-11:15 am. It is for 
- children ages 18-24 months. Each week features themed stories and songs. 
- Parents/guardians must be present during the entire program. No advanced 
- registration is required. Spots will be filled on a first come\, first 
- served basis.
-LOCATION:Children's Room
-ORGANIZER;CN="Lauren Lapinski":MAILTO:llapinski@bayonnelibrary.org
-CATEGORIES:Children's Events, Storytime
-UID:LibCal-17197-15952295
-URL:https://bayonnelibrary.libcal.com/event/15952295
-END:VEVENT
-BEGIN:VEVENT
-DTSTART:20260511T200000Z
-DTEND:20260511T210000Z
-DTSTAMP:20260511T000000Z
-SUMMARY:LIFT Grant Program (BBOED)
-DESCRIPTION:The Bayonne School District and the Bayonne Public Library 
- proudly present the “Bayonne Buzz Into Books” Program! Starting March 
- 2nd\, join us for a twice weekly fun family story time led by a Bayonne 
- Board of Education teacher. Participating families get to take home free 
- books after each session to build their home libraries! This free program 
- is for families with children ages zero through three years old and will 
- run on Mondays from 4-5 pm and Fridays from 3:30-4:30 pm in the Small 
- Programming Room of the Bayonne Public Library. We hope to see you there!\n
-LOCATION:Small Programming Room
-ORGANIZER;CN="Melody Scagnelli-Townley":MAILTO:mtownley@bayonnelibrary.org
-CATEGORIES:Arts & Crafts, Children's Events, Grab-and-Go, STEM/STEAM, Storytime, Teen Events, Tween Events
-UID:LibCal-17197-16387101
-URL:https://bayonnelibrary.libcal.com/event/16387101
-END:VEVENT
-BEGIN:VEVENT
 DTSTART;VALUE=DATE:20260512
 DTEND;VALUE=DATE:20260513
 DTSTAMP:20260512T000000Z
@@ -64,92 +29,6 @@ ORGANIZER;CN="Melody Scagnelli-Townley":MAILTO:mtownley@bayonnelibrary.org
 CATEGORIES:Adults, Art Show, Children's Events, STEM/STEAM, Teen Events, Tween Events
 UID:LibCal-17197-15447688
 URL:https://bayonnelibrary.libcal.com/event/15447688
-END:VEVENT
-BEGIN:VEVENT
-DTSTART:20260512T100000Z
-DTEND:20260513T000000Z
-DTSTAMP:20260512T000000Z
-SUMMARY:Voting Day
-DESCRIPTION:
-LOCATION:Classrooms C&D
-ORGANIZER;CN="Tara Servodio":MAILTO:tservodio@bayonnelibrary.org
-CATEGORIES:Adults
-UID:LibCal-17197-16735979
-URL:https://bayonnelibrary.libcal.com/event/16735979
-END:VEVENT
-BEGIN:VEVENT
-DTSTART:20260512T131500Z
-DTEND:20260512T153000Z
-DTSTAMP:20260512T000000Z
-SUMMARY:CANCELLED - BBOED Principals' Meeting
-DESCRIPTION:
-LOCATION:Small Programming Room
-ORGANIZER;CN="Melody Scagnelli-Townley":MAILTO:mtownley@bayonnelibrary.org
-CATEGORIES:Meeting
-UID:LibCal-17197-15052216
-URL:https://bayonnelibrary.libcal.com/event/15052216
-END:VEVENT
-BEGIN:VEVENT
-DTSTART:20260512T143000Z
-DTEND:20260512T151500Z
-DTSTAMP:20260512T000000Z
-SUMMARY:Parent/Toddler Time (Ages 2-3 Years Old)
-DESCRIPTION:The Parent/Toddler program is on Tuesdays from 10:30-11:15 am. 
- It is for children ages 2-3 years. Each week features themed stories and 
- songs. Parents/guardians must be present during the entire program. No 
- advanced registration is required. Spots will be filled on a first come\, 
- first served basis.
-LOCATION:Children's Room
-ORGANIZER;CN="Lauren Lapinski":MAILTO:llapinski@bayonnelibrary.org
-CATEGORIES:Children's Events, Storytime
-UID:LibCal-17197-15955026
-URL:https://bayonnelibrary.libcal.com/event/15955026
-END:VEVENT
-BEGIN:VEVENT
-DTSTART:20260512T230000Z
-DTEND:20260513T003000Z
-DTSTAMP:20260512T000000Z
-SUMMARY:Yarn Group & Knitting Class
-DESCRIPTION:Join Susan Averello at the Bayonne Public Library for a yarn 
- group & knitting class! She has been knitting for over 30 years and she can 
- also crochet. She has worked at Michaels as a knitting teacher and with 
- Crafty Fox Studios until the studio closed. \n\nThe group will meet on 
- Tuesdays from 7-8:30 pm in the Art & Music Room on the 2nd floor of the 
- Bayonne Public Library.\n\nKnitters and crocheters of all experience levels 
- are welcome\, including those who would like to learn. No registration is 
- required. \n\nIf you are an experienced knitter or crocheter\, please bring 
- with you whatever project you're currently working on. If you are an 
- inexperienced knitter or crocheter who would like to learn\, please bring 
- size 7 knitting needles and a light colored\, worsted weight yarn. \n\nFor 
- more information\, check the Facebook group\, “Bayonne Knitters and 
- Crafters”.\n\n
-LOCATION:Art & Music
-ORGANIZER;CN="Melody Scagnelli-Townley":MAILTO:mtownley@bayonnelibrary.org
-CATEGORIES:Adults, Arts & Crafts, Seniors, Teen Events, Tween Events
-UID:LibCal-17197-16178857
-URL:https://bayonnelibrary.libcal.com/event/16178857
-END:VEVENT
-BEGIN:VEVENT
-DTSTART:20260512T230000Z
-DTEND:20260513T004500Z
-DTSTAMP:20260512T000000Z
-SUMMARY:Bayonne Historical Society Program: "Just What the Heck is an Archives Room Anyway?"
-DESCRIPTION:Join the Bayonne Historical Society at the Bayonne Public 
- Library for a special lecture held on Tuesday\, May 12th at 7 pm in the 
- Gallery: “Just What the Heck is an Archives Room Anyway?” \n\nThere is 
- a wealth of information about the history of the City of Bayonne in the 
- Bayonne Public Library.  Much of it resides in the Library’s Archives 
- Room.  But just what is an Archives Room?  Librarian Bill Fischer will 
- discuss the resources of the Bayonne Public Library and how they can be 
- used to investigate the history of Bayonne. He will share some interesting 
- items from the collection and also discuss digital resources.  A question 
- and answer period will follow. \n\nNo advanced registration is required. 
- Light refreshments provided. We hope to see you there!
-LOCATION:Small Programming Room
-ORGANIZER;CN="Melody Scagnelli-Townley":MAILTO:mtownley@bayonnelibrary.org
-CATEGORIES:Adults, Historical Society, Meeting, Teen Events
-UID:LibCal-17197-16329689
-URL:https://bayonnelibrary.libcal.com/event/16329689
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20260513T170000Z
@@ -2320,7 +2199,7 @@ BEGIN:VEVENT
 DTSTART:20260613T140000Z
 DTEND:20260613T190000Z
 DTSTAMP:20260613T000000Z
-SUMMARY:Bayonne Feral Cat Foundation Adoption Event
+SUMMARY:"Cats\, Coffee\, and Books" Adoption Event
 DESCRIPTION:Join us on Saturday\, June 13th at the Bayonne Public Library 
  in the Gallery from 10 am to 3 pm for a very special “Cats\, Coffee\, & 
  Books Adoption Event”! \n\nStop by to meet some wonderful cats hoping to 
@@ -2711,6 +2590,30 @@ ORGANIZER;CN="Bill Fischer":MAILTO:wfischer@bayonnelibrary.org
 CATEGORIES:Adults, Meeting, Seniors, Social Work, Tech Classes
 UID:LibCal-17197-15951296
 URL:https://bayonnelibrary.libcal.com/event/15951296
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260618T220000Z
+DTEND:20260618T231500Z
+DTSTAMP:20260618T000000Z
+SUMMARY:"Social Security 101" Presentation
+DESCRIPTION:Join us at the Bayonne Public Library on Thursday\, June 18th 
+ at 6 pm in the Gallery for an informative presentation about Social 
+ Security. \n\nSocial Security is the first or second largest source of 
+ income for most retirees\, so it’s important to get the facts before you 
+ file. At this seminar\, you’ll learn simple strategies to help maximize 
+ your benefits and potentially increase your retirement income! \n\nGet 
+ answers to your questions\, such as: How are my benefits calculated? How do 
+ I choose between taking my benefits early vs delaying? How can I reduce 
+ taxes on my Social Security? When can my spouse collect spousal benefits? 
+ What benefits are available to a divorced spouse or a widow/widower? Can I 
+ continue working after I claim benefits? \n\nAdvanced registration is 
+ recommended\, but not required. Walk-ins will be accommodated if space 
+ permits.
+LOCATION:Gallery
+ORGANIZER;CN="Melody Scagnelli-Townley":MAILTO:mtownley@bayonnelibrary.org
+CATEGORIES:Adults, Presentation, Seniors
+UID:LibCal-17197-16793521
+URL:https://bayonnelibrary.libcal.com/event/16793521
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20260618T223000Z
@@ -4710,6 +4613,45 @@ ORGANIZER;CN="Bill Fischer":MAILTO:wfischer@bayonnelibrary.org
 CATEGORIES:Adults, Meeting, Seniors, Social Work, Tech Classes
 UID:LibCal-17197-15951302
 URL:https://bayonnelibrary.libcal.com/event/15951302
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260730T230000Z
+DTEND:20260731T003000Z
+DTSTAMP:20260730T000000Z
+SUMMARY:Bayonne Book Club: "The Amalfi Curse"
+DESCRIPTION:\n\nJoin Bayonne Public Library and Mamas in Bayonne for our 
+ July 2026 Bayonne Book Club! \n\nAll are welcomed and encouraged to attend. 
+ The genre / theme of the books chosen will vary. The discussions will be 
+ moderated by Bayonne local\, Angela van Genderen 
+ (@angela_the_ninja).\n\nThis month’s meeting will be Thursday\, July 30th 
+ at 7 pm in the Small Programming Room on the 2nd Floor at the Bayonne 
+ Public Library. In celebration of summer beach reads\, we will be reading 
+ “The Amalfi Curse” by Sarah Penner.\n\nAttendees can join in-person or 
+ virtually via Zoom. To attend virtually\, please sign up via the library 
+ calendar event listing.\n\nWhat’s the book about? Haven Ambrose\, a 
+ trailblazing nautical archaeologist\, has come to the sun-soaked village of 
+ Positano to investigate the mysterious shipwrecks along the Amalfi Coast. 
+ But Haven is hoping to find more than old artifacts beneath the azure 
+ waters\; she is secretly on a quest to locate a trove of priceless 
+ gemstones her late father spotted on his final dive. Upon Haven’s 
+ arrival\, strange maelstroms and misfortunes start plaguing the town. Is it 
+ nature or something more sinister at work? As Haven searches for her 
+ father’s sunken treasure\, she begins to unearth a centuries-old tale of 
+ ancient sorcery and one woman’s quest to save her lover and her village 
+ by using the legendary art of stregheria\, a magical ability to harness the 
+ ocean. Could this magic be behind Positano’s latest calamities? Haven 
+ must unravel the Amalfi Curse before the region is destroyed forever…  
+ \n\nHow can you participate? Bayonne Public Library has eBook and 
+ eAudiobook copies available via hoopla as well as physical book copies. If 
+ you’d prefer to purchase your own physical copy\, we recommend purchasing 
+ from The Little Boho Bookshop\, our favorite local bookshop\, located at 
+ 164A Broadway or online at 
+ https://thelittlebohobookshop.com/\n\n\n\n\n\n\n\n\n\n\n\n\n\n
+LOCATION:Small Programming Room
+ORGANIZER;CN="Melody Scagnelli-Townley":MAILTO:mtownley@bayonnelibrary.org
+CATEGORIES:Adults, Book Club, Seniors, Teen Events
+UID:LibCal-17197-17054658
+URL:https://bayonnelibrary.libcal.com/calendar/BPL/BayBCJuly2026
 END:VEVENT
 BEGIN:VEVENT
 DTSTART:20260731T143000Z

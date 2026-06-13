@@ -106,6 +106,8 @@ const mobileOpen = ref(false)
 
 const navLinks = [
   { path: '/', label: '🏠 Home' },
+  { path: '/events', label: '📅 Events' },
+  { path: '/maps', label: '🗺️ Maps' },
   { path: '/about', label: 'ℹ️ About' },
 ]
 </script>
