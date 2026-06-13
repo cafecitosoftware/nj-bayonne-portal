@@ -5,7 +5,7 @@
       "id": "library",
       "name": "Bayonne Public Library",
       "type": "ical",
-      "endpoint": "/data/events/library.ics",
+      "endpoint": "./data/events/library.ics",
       "url": "https://bayonnelibrary.libcal.com/ical_subscribe.php?src=p&cid=17197",
       "enabled": true,
       "color": "#1E90FF"
@@ -14,7 +14,7 @@
       "id": "school",
       "name": "Bayonne School District",
       "type": "ical",
-      "endpoint": "/data/events/school.ics",
+      "endpoint": "./data/events/school.ics",
       "url": "https://www.bboed.org/cf_calendar/feed.cfm?type=ical&feedID=E3C0D58EC5E44405AD6A31D2556243CD",
       "enabled": true,
       "color": "#FF6347"

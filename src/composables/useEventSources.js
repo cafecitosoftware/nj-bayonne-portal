@@ -1,6 +1,6 @@
 import { onMounted, ref } from 'vue'
 
-const DEFAULT_INDEX_ENDPOINT = '/data/events/index.json'
+const DEFAULT_INDEX_ENDPOINT = './data/events/index.json'
 
 function decodeIcsText(value = '') {
     return value

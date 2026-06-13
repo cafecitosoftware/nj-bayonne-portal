@@ -9,7 +9,7 @@
       "id": "splash-pads",
       "name": "Bayonne Splash Pads",
       "type": "json",
-      "endpoint": "/data/maps/splash-pads.json",
+      "endpoint": "./data/maps/splash-pads.json",
       "color": "#2563eb",
       "enabled": true
     },
@@ -17,7 +17,7 @@
       "id": "parks",
       "name": "Bayonne Parks",
       "type": "json",
-      "endpoint": "/data/maps/parks.json",
+      "endpoint": "./data/maps/parks.json",
       "color": "#16a34a",
       "enabled": true
     }

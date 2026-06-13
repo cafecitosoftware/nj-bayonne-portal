@@ -1,6 +1,6 @@
 import { onMounted, ref } from 'vue'
 
-const DEFAULT_INDEX_ENDPOINT = '/data/maps/index.json'
+const DEFAULT_INDEX_ENDPOINT = './data/maps/index.json'
 
 // Function to load JSON sources
 export function useMapSources(indexEndpoint = DEFAULT_INDEX_ENDPOINT) {
@@ -16,8 +16,8 @@ export function useMapSources(indexEndpoint = DEFAULT_INDEX_ENDPOINT) {
         }
 
         // Backward compatibility for older payloads where map data was stored under /data/maps.
-        if (endpoint.startsWith('/data/events/') && endpoint.endsWith('.json')) {
-            return endpoint.replace('/data/events/', '/data/maps/')
+        if ((endpoint.startsWith('/data/events/') || endpoint.startsWith('./data/events/')) && endpoint.endsWith('.json')) {
+            return endpoint.replace(/\.\/data\/events\/|\/data\/events\//g, './data/maps/')
         }
 
         return endpoint
