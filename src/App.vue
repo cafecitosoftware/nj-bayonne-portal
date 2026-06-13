@@ -62,8 +62,8 @@
         <div>
           <h3 class="text-white font-semibold text-lg mb-3">☕ Cafecito Software</h3>
           <p class="text-sm leading-relaxed">
-            An independent community project built by a Bayonne resident.
-            No affiliation with the City of Bayonne.
+            A one-person independent software studio building useful tools for real people.
+            This project is community-focused and not affiliated with the City of Bayonne.
           </p>
         </div>
         <div>
@@ -90,7 +90,7 @@
       <div class="border-t border-blue-700 py-4 px-6">
         <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-blue-400">
           <p>© {{ new Date().getFullYear() }} Cafecito Software. Built with ☕ in Bayonne, NJ.</p>
-          <p class="text-center">Not affiliated with or endorsed by the City of Bayonne.</p>
+          <p class="text-center">Independent project. Not affiliated with or endorsed by the City of Bayonne.</p>
         </div>
       </div>
     </footer>

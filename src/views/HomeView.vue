@@ -4,14 +4,11 @@
     <!-- Hero Section -->
     <section class="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-28 px-6">
       <div class="max-w-5xl mx-auto text-center">
-        <span class="inline-block bg-yellow-400 text-blue-900 text-xs font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest">
-          🏙️ Official City Portal
-        </span>
         <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
-          Welcome to <span class="text-yellow-300">Bayonne</span>
+          Welcome to <span class="text-yellow-300">Bayonne, NJ</span>
         </h1>
         <p class="text-xl text-blue-100 max-w-2xl mx-auto mb-10 leading-relaxed">
-          Your one-stop hub for city news, upcoming events, and community resources in Bayonne, New Jersey.
+          Your one-stop hub for upcoming events and city locations in Bayonne, New Jersey.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
           <RouterLink

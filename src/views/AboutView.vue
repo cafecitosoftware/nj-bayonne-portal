@@ -11,7 +11,7 @@
           About This Project
         </h1>
         <p class="text-blue-200 text-lg max-w-2xl leading-relaxed">
-          A community-driven portal built by a Bayonne resident, for Bayonne residents.
+          A community portal built by one person who landed in Bayonne and loves this city.
         </p>
       </div>
     </div>
@@ -21,9 +21,9 @@
       <div class="max-w-4xl mx-auto flex items-start gap-3">
         <span class="text-yellow-600 text-xl mt-0.5">⚠️</span>
         <p class="text-yellow-800 text-sm leading-relaxed">
-          <strong>Disclaimer:</strong> This website is an independent community resource and is
+          <strong>Disclaimer:</strong> This website is an independent community resource built by Cafecito Software and is
           <strong>not affiliated with, endorsed by, or associated with the City of Bayonne</strong>
-          or any official government body. Information here is provided as-is for community convenience.
+          or any official government body. Information here is provided as-is for community convenience. Usage insights may be added in the future to improve the experience.
         </p>
       </div>
     </div>
@@ -47,6 +47,9 @@
             So I built this. A simple, clean place where anyone in Bayonne can see what's going on — no account
             required, no algorithm, no ads. Just your city's events, in one place.
           </p>
+          <p class="text-gray-600 leading-relaxed mt-4">
+            I was not born and raised in Bayonne. It is the city I landed in and came to love, and this portal is one way I can give back.
+          </p>
         </div>
         <div class="grid grid-cols-2 gap-4">
           <div v-for="card in storyCards" :key="card.label"
@@ -67,9 +70,9 @@
         </div>
         <div class="px-8 py-8">
           <p class="text-gray-600 leading-relaxed mb-4">
-            Cafecito Software is a small, independent software project focused on building useful tools
-            for real people. No venture capital, no growth hacking — just thoughtful software made by
-            someone who lives in the same community it serves.
+            Cafecito Software is a one-person independent software company focused on building useful tools
+            for real people, and maybe even a video game. No venture capital, no growth hacking — just thoughtful
+            software made by someone who lives in the same community it serves.
           </p>
           <p class="text-gray-600 leading-relaxed">
             This portal is our way of giving back to Bayonne — the city we call home. We hope it makes
@@ -109,8 +112,8 @@
 <script setup>
 const storyCards = [
   { icon: '📵', label: 'Off Social Media', sub: 'By choice' },
-  { icon: '🏙️', label: 'Bayonne Resident', sub: 'Born & raised' },
-  { icon: '☕', label: 'Cafecito Software', sub: 'Indie project' },
+  { icon: '🏙️', label: 'Bayonne Resident', sub: 'Landed here, love it' },
+  { icon: '☕', label: 'Cafecito Software', sub: 'Company of one' },
   { icon: '💙', label: 'Community First', sub: 'Always free' },
 ]
 
@@ -120,7 +123,7 @@ const values = [
   {
     icon: '🔓',
     title: 'No Login Required',
-    description: 'Everything on this site is freely accessible. No account, no sign-up, no tracking.',
+    description: 'Everything on this site is freely accessible. No account and no sign-up required.',
   },
   {
     icon: '📵',
@@ -131,6 +134,11 @@ const values = [
     icon: '🤝',
     title: 'Community Driven',
     description: 'Built by a resident, for residents. No corporate interest, no agenda.',
+  },
+  {
+    icon: '📊',
+    title: 'Built To Improve',
+    description: 'Usage insights may be used in the future to better understand what helps residents most.',
   },
   {
     icon: '🏙️',
