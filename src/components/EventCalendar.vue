@@ -16,11 +16,9 @@ const sourceOptions = computed(() =>
   Object.entries(eventsLegend.value || {}).map(([name, color]) => ({ name, color }))
 )
 
-watch(sourceOptions, (sources) => {
-  if (sources.length === 0) return
-  if (selectedSources.value.length === 0) {
-    selectedSources.value = sources.map(source => source.name)
-  }
+watch(loading, (isLoading) => {
+  if (isLoading) return
+  selectedSources.value = sourceOptions.value.map(source => source.name)
 }, { immediate: true })
 
 const filteredEvents = computed(() =>
