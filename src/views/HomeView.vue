@@ -56,7 +56,7 @@
         >
           <p class="text-sm font-semibold uppercase tracking-wide text-blue-600">Events</p>
           <h3 class="text-2xl font-bold text-gray-900 mt-2">Community Calendar</h3>
-          <p class="text-gray-500 mt-2">Browse upcoming activities from libraries, schools, and other local sources.</p>
+          <p class="text-gray-500 mt-2">Browse upcoming activities from libraries, schools, and City of Bayonne event feeds.</p>
           <p class="text-blue-700 font-semibold mt-5 group-hover:underline">Open Events Page →</p>
         </RouterLink>
         <RouterLink
@@ -110,7 +110,8 @@ const cityStats = [
 
 const services = [
   { icon: '📚', title: 'Public Library', description: 'Public Library Services', url:'https://www.bayonnelibrary.org/' },
-  { icon: '🏫', title: 'School District', description: 'Public School Services', url:'https://www.bboed.org/' }
+  { icon: '🏫', title: 'School District', description: 'Public School Services', url:'https://www.bboed.org/' },
+  { icon: '🏛️', title: 'City Events API', description: 'City of Bayonne Events Source', url:'https://www.bayonnenj.org/calendar.aspx' }
 ]
 
 </script>

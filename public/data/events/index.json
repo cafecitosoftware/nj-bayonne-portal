@@ -18,6 +18,23 @@
       "url": "https://www.bboed.org/cf_calendar/feed.cfm?type=ical&feedID=E3C0D58EC5E44405AD6A31D2556243CD",
       "enabled": true,
       "color": "#FF6347"
+    },
+    {
+      "id": "city-events",
+      "name": "City of Bayonne Events",
+      "type": "api",
+      "endpoint": "data/events/city-events.json",
+      "url": "https://www.bayonnenj.org/api/data/GetCalendarEvents",
+      "queryParams": {
+        "start": "start",
+        "end": "end"
+      },
+      "queryParamaFormat": "MM/DD/YYYY hh:mm a",
+      "queryAhead": 6,
+      "enabled": true,
+      "color": "#32CD32",
+      "timezone": "America/New_York"
     }
+
   ]
 }
