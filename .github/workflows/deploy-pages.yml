@@ -32,6 +32,9 @@ jobs:
         run: npm ci
 
       - name: Build Site
+        env:
+          VITE_GA_MEASUREMENT_ID: ${{ secrets.VITE_GA_MEASUREMENT_ID }}
+          VITE_GOOGLE_MAPS_API_KEY: ${{ secrets.VITE_GOOGLE_MAPS_API_KEY }}
         run: |
           node scripts/download-events.js
           npx vite build --base="/${{ github.event.repository.name }}/"

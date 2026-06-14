@@ -36,3 +36,29 @@ npm run dev
 ```sh
 npm run build
 ```
+
+## Google Analytics (vue-gtag)
+
+This project includes a basic Google Analytics 4 setup via `vue-gtag`.
+
+1. Create your local environment file from `.env.example`.
+2. Set `VITE_GA_MEASUREMENT_ID` to your GA4 Measurement ID (for example `G-XXXXXXXXXX`).
+3. Set `VITE_GOOGLE_MAPS_API_KEY` to your Google Maps JavaScript API key.
+
+When the env var is present, analytics is initialized automatically and route changes are tracked through Vue Router.
+
+### GitHub Pages Setup
+
+For GitHub Pages deployments, the workflow reads `VITE_GA_MEASUREMENT_ID` from a repository secret.
+
+1. Go to your repository settings in GitHub.
+2. Open **Secrets and variables** > **Actions**.
+3. Add a new repository secret named `VITE_GA_MEASUREMENT_ID`.
+4. Add a new repository secret named `VITE_GOOGLE_MAPS_API_KEY`.
+5. Set the secret values to your GA4 ID and Google Maps key.
+
+Notes:
+- Your local `.env` file is ignored by git and should stay local.
+- `.env.example` is safe to commit and documents required keys.
+- In Vite apps, any variable starting with `VITE_` is embedded into client code at build time.
+  For GA, this is expected because a Measurement ID is not a private secret.

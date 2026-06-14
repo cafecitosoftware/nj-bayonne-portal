@@ -4,6 +4,7 @@ import { computed, ref, watch } from 'vue'
 import { GoogleMap, InfoWindow, Marker, MarkerCluster } from 'vue3-google-map'
 
 const { mapCenter, sources, locations, loading, error } = useMapSources()
+const googleMapsApiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY
 
 const selectedSourceIds = ref([])
 const activeLocation = ref(null)
@@ -143,7 +144,7 @@ function markerOptions(location) {
     </div>
 
     <GoogleMap
-      api-key="AIzaSyCB6AzuA1_kmkWUQ7cYO0mTp5uAoBqdJA4"
+      :api-key="googleMapsApiKey"
       style="width: 100%; height: 500px"
       :center="mapCenter"
       :zoom="zoom"
