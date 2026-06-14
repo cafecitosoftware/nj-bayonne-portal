@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Bayonne Portal Social Preview</title>
+  <desc id="desc">Preview card for Bayonne Portal showing events and maps for Bayonne, New Jersey.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0f2f75" />
+      <stop offset="100%" stop-color="#1c4eb6" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="1040" cy="120" r="210" fill="#ffcc33" fill-opacity="0.15" />
+  <circle cx="140" cy="530" r="170" fill="#ffcc33" fill-opacity="0.2" />
+  <g fill="#ffffff" font-family="Segoe UI, Arial, sans-serif">
+    <text x="90" y="220" font-size="70" font-weight="700">Bayonne Portal</text>
+    <text x="90" y="300" font-size="38" font-weight="400">Events and maps for Bayonne, New Jersey</text>
+    <text x="90" y="370" font-size="30" font-weight="400">nj-bayonne-portal.cafecitosoftware.com</text>
+  </g>
+  <rect x="90" y="430" width="360" height="74" rx="12" fill="#ffcc33" />
+  <text x="270" y="478" text-anchor="middle" fill="#0f2f75" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700">Community Resource</text>
+</svg>
