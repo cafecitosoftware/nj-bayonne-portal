@@ -105,14 +105,15 @@ import { withCampaignParams } from '@/utils/outboundLinks'
 const cityStats = [
   { value: '72K+', label: 'Residents' },
   { value: '1861', label: 'Founded' },
-  { value: '5.9 mi²', label: 'City Area' },
-  { value: '21', label: 'Neighborhoods' },
+  { value: '5.82 mi²', label: 'City Area' },
+  { value: 'Hudson', label: 'County' },
 ]
 
 const services = [
-  { icon: '📚', title: 'Public Library', description: 'Public Library Services', url: withCampaignParams('https://www.bayonnelibrary.org/') },
-  { icon: '🏫', title: 'School District', description: 'Public School Services', url: withCampaignParams('https://www.bboed.org/') },
-  { icon: '🏛️', title: 'City of Bayonne', description: 'City of Bayonne', url: withCampaignParams('https://www.bayonnenj.org') }
+  { icon: '📚', title: 'Public Library', description: '', url: withCampaignParams('https://www.bayonnelibrary.org/') },
+  { icon: '🏫', title: 'School District', description: '', url: withCampaignParams('https://www.bboed.org/') },
+  { icon: '🏛️', title: 'City of Bayonne', description: '', url: withCampaignParams('https://www.bayonnenj.org') },
+  { icon: '🏛️', title: 'Hudson County', description: '', url: withCampaignParams('https://www.hcnj.us/') }
 ]
 
 </script>

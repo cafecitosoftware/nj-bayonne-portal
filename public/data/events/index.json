@@ -34,6 +34,14 @@
       "enabled": true,
       "color": "#32CD32",
       "timezone": "America/New_York"
+    },
+    {
+      "id": "hudson-county-events",
+      "name": "Hudson County Events",
+      "type": "json",
+      "endpoint": "data/events/hudson-county-events.json",
+      "enabled": true,
+      "color": "#800080"
     }
 
   ]

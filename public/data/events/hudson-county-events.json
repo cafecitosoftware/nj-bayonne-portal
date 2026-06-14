@@ -1,0 +1,30 @@
+{
+  "events": [
+   {
+      "id": "1",
+      "title": "Movies in the Park: A Minecraft Movie",
+      "date": "2026-07-06",
+      "time": "19:00",
+      "endDate": "2026-07-06",
+      "endTime": "22:00",
+      "allDay": false,
+      "url": "https://www.hcnj.us/event/movies-in-the-park-a-minecraft-movie/",
+      "location": "Stephen R. Gregg Park",
+      "description": null,
+      "timezone": "America/New_York"
+    },
+    {
+      "id": "2",
+      "title": "Movies in the Park: Beauty & the Beast Live Action",
+      "date": "2026-08-04",
+      "time": "19:00",
+      "endDate": "2026-08-04",
+      "endTime": "22:00",
+      "allDay": false,
+      "url": "https://www.hcnj.us/event/movies-in-the-park-beauty-the-beast-live-action/",
+      "location": "Stephen R. Gregg Park",
+      "description": null,
+      "timezone": "America/New_York"
+    }
+  ]
+}
