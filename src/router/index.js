@@ -85,6 +85,15 @@ const router = createRouter({
         title: 'About Bayonne Portal | Cafecito Software',
         description: 'Learn about the Bayonne Portal project, data sources, and its independent community focus.'
       }
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'not-found',
+      component: () => import('../views/NotFoundView.vue'),
+      meta: {
+        title: 'Page Not Found | Bayonne Portal',
+        description: 'The page you requested could not be found. Return to Bayonne Portal events and maps.'
+      }
     }
   ],
 })
