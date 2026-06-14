@@ -37,7 +37,7 @@ jobs:
           VITE_GOOGLE_MAPS_API_KEY: ${{ secrets.VITE_GOOGLE_MAPS_API_KEY }}
         run: |
           node scripts/download-events.js
-          npx vite build --base="/${{ github.event.repository.name }}/"
+          npx vite build --base="/"
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
