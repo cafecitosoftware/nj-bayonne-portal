@@ -12,22 +12,16 @@ const searchQuery = ref('')
 const isMobileViewport = ref(false)
 const showMobileMap = ref(false)
 
-const MOBILE_BREAKPOINT = 768
-
 function updateViewportState() {
-  isMobileViewport.value = globalThis?.window?.innerWidth < MOBILE_BREAKPOINT
-  if (!isMobileViewport.value) {
-    showMobileMap.value = false
-  }
+  // Always use mobile-first list view across all screen sizes
 }
 
 onMounted(() => {
-  updateViewportState()
-  globalThis?.window?.addEventListener('resize', updateViewportState)
+  isMobileViewport.value = true
 })
 
 onBeforeUnmount(() => {
-  globalThis?.window?.removeEventListener('resize', updateViewportState)
+  // Cleanup if needed
 })
 
 watch(
@@ -262,7 +256,7 @@ function polygonOptions(polygon) {
       <p v-if="!allSelected" class="text-xs text-gray-500 mt-3">Showing {{ filteredFeatureCount }} of {{ totalFeatureCount }} map features.</p>
     </div>
 
-    <div class="md:hidden bg-white rounded-2xl border border-gray-200 shadow-sm p-4">
+    <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-4">
       <div class="flex items-center justify-between gap-3">
         <div>
           <h3 class="text-blue-900 font-extrabold tracking-tight">Nearby Places</h3>
@@ -312,7 +306,7 @@ function polygonOptions(polygon) {
       </p>
     </div>
 
-    <div class="hidden md:block relative rounded-xl overflow-hidden border border-gray-200">
+    <div v-show="false" class="relative rounded-xl overflow-hidden border border-gray-200">
     <div v-if="loading" class="absolute inset-0 z-10 bg-white/80 flex items-center justify-center text-gray-700 font-medium">
       Loading map data...
     </div>
