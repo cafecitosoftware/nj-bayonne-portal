@@ -111,7 +111,7 @@ const cityStats = [
 const services = [
   { icon: '📚', title: 'Public Library', description: 'Public Library Services', url:'https://www.bayonnelibrary.org/' },
   { icon: '🏫', title: 'School District', description: 'Public School Services', url:'https://www.bboed.org/' },
-  { icon: '🏛️', title: 'City Events API', description: 'City of Bayonne Events Source', url:'https://www.bayonnenj.org/calendar.aspx' }
+  { icon: '🏛️', title: 'City of Bayonne', description: 'City of Bayonne', url:'https://www.bayonnenj.org' }
 ]
 
 </script>
