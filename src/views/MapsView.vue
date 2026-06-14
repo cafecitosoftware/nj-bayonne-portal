@@ -9,6 +9,9 @@
         <p class="text-blue-100 text-lg mt-4 max-w-3xl">
           Browse location datasets with source filters, styled legends, and pin details.
         </p>
+        <p class="mt-4 inline-flex max-w-3xl items-start rounded-lg border border-amber-300/60 bg-amber-100/95 px-4 py-2 text-sm font-medium text-amber-900">
+          Map data is curated manually and may be incomplete while we continue adding and verifying locations and boundaries.
+        </p>
       </div>
     </section>
 

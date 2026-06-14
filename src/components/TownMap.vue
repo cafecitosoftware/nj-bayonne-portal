@@ -1,9 +1,9 @@
 <script setup>
 import { useMapSources } from '@/composables/useMapSources'
 import { computed, ref, watch } from 'vue'
-import { GoogleMap, InfoWindow, Marker, MarkerCluster } from 'vue3-google-map'
+import { GoogleMap, InfoWindow, Marker, MarkerCluster, Polygon } from 'vue3-google-map'
 
-const { mapCenter, sources, locations, loading, error } = useMapSources()
+const { mapCenter, sources, locations, polygons, loading, error } = useMapSources()
 const googleMapsApiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY
 
 const selectedSourceIds = ref([])
@@ -35,11 +35,24 @@ const filteredLocations = computed(() => {
   return locations.value.filter((location) => selectedSet.value.has(location.sourceId))
 })
 
-const zoom = computed(() => (filteredLocations.value.length > 0 ? 13 : 11))
+const filteredPolygons = computed(() => {
+  if (selectedSet.value.size === 0) {
+    return []
+  }
+
+  return polygons.value.filter((polygon) => selectedSet.value.has(polygon.sourceId))
+})
+
+const totalFeatureCount = computed(() => locations.value.length + polygons.value.length)
+const filteredFeatureCount = computed(() => filteredLocations.value.length + filteredPolygons.value.length)
+
+const zoom = computed(() => (filteredFeatureCount.value > 0 ? 13 : 11))
 const legendSources = computed(() => {
   return sources.value.map((source) => ({
     ...source,
-    count: locations.value.filter((location) => location.sourceId === source.id).length
+    count:
+      locations.value.filter((location) => location.sourceId === source.id).length +
+      polygons.value.filter((polygon) => polygon.sourceId === source.id).length
   }))
 })
 
@@ -72,6 +85,20 @@ function onMarkerClick(location) {
   activeLocation.value = location
 }
 
+function onPolygonClick(polygon) {
+  if (
+    activeLocation.value?.lat === polygon.lat &&
+    activeLocation.value?.lng === polygon.lng &&
+    activeLocation.value?.sourceId === polygon.sourceId &&
+    activeLocation.value?.name === polygon.name
+  ) {
+    activeLocation.value = null
+    return
+  }
+
+  activeLocation.value = polygon
+}
+
 function onMapClick() {
   activeLocation.value = null
 }
@@ -92,6 +119,19 @@ function markerOptions(location) {
           scale: 8
         }
       : undefined
+  }
+}
+
+function polygonOptions(polygon) {
+  return {
+    paths: polygon.paths,
+    strokeColor: polygon.sourceColor,
+    strokeOpacity: 0.95,
+    strokeWeight: 2,
+    fillColor: polygon.sourceColor,
+    fillOpacity: 0.2,
+    clickable: true,
+    zIndex: 1
   }
 }
 </script>
@@ -129,7 +169,7 @@ function markerOptions(location) {
           </label>
         </li>
       </ul>
-      <p v-if="!allSelected" class="text-xs text-gray-500 mt-3">Showing {{ filteredLocations.length }} of {{ locations.length }} locations.</p>
+      <p v-if="!allSelected" class="text-xs text-gray-500 mt-3">Showing {{ filteredFeatureCount }} of {{ totalFeatureCount }} map features.</p>
     </div>
 
     <div class="relative rounded-xl overflow-hidden border border-gray-200">
@@ -139,8 +179,8 @@ function markerOptions(location) {
     <div v-else-if="error" class="absolute inset-0 z-10 bg-red-50 flex items-center justify-center text-red-700 text-center px-4">
       {{ error }}
     </div>
-    <div v-else-if="filteredLocations.length === 0" class="absolute inset-0 z-10 bg-blue-50/80 flex items-center justify-center text-blue-900 text-center px-4">
-      Select at least one source to see map markers.
+    <div v-else-if="filteredFeatureCount === 0" class="absolute inset-0 z-10 bg-blue-50/80 flex items-center justify-center text-blue-900 text-center px-4">
+      Select at least one source to see map features.
     </div>
 
     <GoogleMap
@@ -150,6 +190,13 @@ function markerOptions(location) {
       :zoom="zoom"
       @click="onMapClick"
     >
+      <Polygon
+        v-for="(polygon, i) in filteredPolygons"
+        :key="`${polygon.sourceId}-${polygon.name}-${i}`"
+        :options="polygonOptions(polygon)"
+        @click="onPolygonClick(polygon)"
+      />
+
       <MarkerCluster>
         <Marker
           v-for="(location, i) in filteredLocations"

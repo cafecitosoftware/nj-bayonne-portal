@@ -1,32 +1,70 @@
 [
   {
     "name": "Stephen R. Gregg Park",
-    "lat": 40.6817,
-    "lng": -74.1187,
+    "border": [
+      { "lat": 40.6800969, "lng": -74.1191672 },
+      { "lat": 40.679045, "lng": -74.1170093 },
+      { "lat": 40.6789509, "lng": -74.1169162 },
+      { "lat": 40.6788348, "lng": -74.1166795 },
+      { "lat": 40.6786869, "lng": -74.1163779 },
+      { "lat": 40.677838, "lng": -74.1146473 },
+      { "lat": 40.6790654, "lng": -74.1137498 },
+      { "lat": 40.6784818, "lng": -74.1125743 },
+      { "lat": 40.6790714, "lng": -74.1120736 },
+      { "lat": 40.6784588, "lng": -74.1108241 },
+      { "lat": 40.6779227, "lng": -74.1097293 },
+      { "lat": 40.6785154, "lng": -74.1092283 },
+      { "lat": 40.6796682, "lng": -74.111568 },
+      { "lat": 40.6802617, "lng": -74.1110623 },
+      { "lat": 40.6809081, "lng": -74.1123993 },
+      { "lat": 40.6846436, "lng": -74.1096812 },
+      { "lat": 40.6857258, "lng": -74.1118834 },
+      { "lat": 40.6859255, "lng": -74.1123942 },
+      { "lat": 40.6859382, "lng": -74.1125334 },
+      { "lat": 40.6864054, "lng": -74.1134847 },
+      { "lat": 40.6864119, "lng": -74.1134985 },
+      { "lat": 40.6865068, "lng": -74.1136906 },
+      { "lat": 40.6863699, "lng": -74.1138065 },
+      { "lat": 40.6863592, "lng": -74.1138156 },
+      { "lat": 40.682488, "lng": -74.1170932 },
+      { "lat": 40.6824591, "lng": -74.1170357 },
+      { "lat": 40.68233, "lng": -74.1167782 },
+      { "lat": 40.6823073, "lng": -74.1167797 },
+      { "lat": 40.6822819, "lng": -74.1167759 },
+      { "lat": 40.6822563, "lng": -74.1167666 },
+      { "lat": 40.6822334, "lng": -74.1167447 },
+      { "lat": 40.6818557, "lng": -74.1163033 },
+      { "lat": 40.6817969, "lng": -74.1163527 },
+      { "lat": 40.6817779, "lng": -74.1163207 },
+      { "lat": 40.6817497, "lng": -74.1163018 },
+      { "lat": 40.6817234, "lng": -74.1162992 },
+      { "lat": 40.6816965, "lng": -74.1163109 },
+      { "lat": 40.6815363, "lng": -74.1164453 },
+      { "lat": 40.6815192, "lng": -74.116479 },
+      { "lat": 40.6815104, "lng": -74.1165155 },
+      { "lat": 40.6815111, "lng": -74.116556 },
+      { "lat": 40.6815193, "lng": -74.1165862 },
+      { "lat": 40.6814569, "lng": -74.1166386 },
+      { "lat": 40.6816072, "lng": -74.1172777 },
+      { "lat": 40.6816109, "lng": -74.1173123 },
+      { "lat": 40.6816092, "lng": -74.117344 },
+      { "lat": 40.6816025, "lng": -74.1173748 },
+      { "lat": 40.6815909, "lng": -74.1174028 },
+      { "lat": 40.6817192, "lng": -74.117661 },
+      { "lat": 40.6817621, "lng": -74.1177477 },
+      { "lat": 40.6800969, "lng": -74.1191672 }
+    ],
     "description": "Hudson County waterfront park with trails, fields, and play areas."
   },
   {
-    "name": "Dennis P. Collins Park",
-    "lat": 40.6645,
-    "lng": -74.1062,
-    "description": "Large city park featuring sports fields, open lawns, and playgrounds."
-  },
-  {
-    "name": "Juliet Street Mini Park",
-    "lat": 40.6769,
-    "lng": -74.1114,
-    "description": "Neighborhood green space with benches and shaded seating."
-  },
-  {
-    "name": "Sgt. Anthony Park",
-    "lat": 40.6694,
-    "lng": -74.1111,
-    "description": "Community park area with playground amenities and walking paths."
-  },
-  {
-    "name": "Waterfront Promenade Park",
-    "lat": 40.6538,
-    "lng": -74.1129,
-    "description": "Scenic shoreline access area with views and a pedestrian walkway."
+    "name": "Francis G. Fitzpatrick Park",
+    "border": [
+      { "lat": 40.6676153, "lng": -74.1182231 },
+      { "lat": 40.6674516, "lng": -74.1178835 },
+      { "lat": 40.6680681, "lng": -74.1173669 },
+      { "lat": 40.6682318, "lng": -74.1177065 },
+      { "lat": 40.6676153, "lng": -74.1182231 }
+    ],
+    "description": "Neighborhood park with athletic courts and open green space."
   }
 ]
