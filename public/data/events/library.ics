@@ -31,68 +31,6 @@ UID:LibCal-17197-15447688
 URL:https://bayonnelibrary.libcal.com/event/15447688
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260513T170000Z
-DTEND:20260513T183000Z
-DTSTAMP:20260513T000000Z
-SUMMARY:May Afternoon Movies: The Night of the Hunter
-DESCRIPTION:Save the dates! Join us at the Bayonne Public Library in the 
- Art & Music Room on the second floor every Wednesday this April at 1 pm for 
- a free movie! Each week\, we’ll be showing some of our favorite old and 
- new movies.  \n\n \n\nMay 6th - Song Sung Blue\n\nMay 13th - The Night of 
- the Hunter\n\nMay 20th - Elvis\n\nMay 27th - Patriots Day\n\n \n\nLight 
- refreshments will be served. We hope to see you there!
-LOCATION:Art & Music
-ORGANIZER;CN="Narissa Palmer":MAILTO:npalmer@bayonnelibrary.org
-CATEGORIES:Movies
-UID:LibCal-17197-16785416
-URL:https://bayonnelibrary.libcal.com/event/16785416
-END:VEVENT
-BEGIN:VEVENT
-DTSTART:20260513T180000Z
-DTEND:20260513T220000Z
-DTSTAMP:20260513T000000Z
-SUMMARY:Canceled-Red Foxes Senior Group
-DESCRIPTION:
-LOCATION:Classrooms C&D
-ORGANIZER;CN="Tara Servodio":MAILTO:tservodio@bayonnelibrary.org
-CATEGORIES:Meeting, Seniors
-UID:LibCal-17197-15345185
-URL:https://bayonnelibrary.libcal.com/event/15345185
-END:VEVENT
-BEGIN:VEVENT
-DTSTART:20260513T191500Z
-DTEND:20260513T200000Z
-DTSTAMP:20260513T000000Z
-SUMMARY:Story Time (Ages 4-5 Years Old)
-DESCRIPTION:Story Time program is on Wednesdays from 3:15-4 pm. It is for 
- children ages 4-5 years. Each week features themed crafts and stories. 
- Parents/guardians must be present during the entire program. No advanced 
- registration is required. Spots will be filled on a first come\, first 
- served basis.
-LOCATION:Children's Room
-ORGANIZER;CN="Jake Russell":MAILTO:jrussell@bayonnelibrary.org
-CATEGORIES:Arts & Crafts, Children's Events, Storytime
-UID:LibCal-17197-15955177
-URL:https://bayonnelibrary.libcal.com/event/15955177
-END:VEVENT
-BEGIN:VEVENT
-DTSTART:20260513T220000Z
-DTEND:20260513T230000Z
-DTSTAMP:20260513T000000Z
-SUMMARY:Chess Club (Ages 8-18)
-DESCRIPTION:Join us at Bayonne Public Library for a Chess Club with Phil 
- Rosado! Phil is the author of “Mind Matter: Welcome to Chess!” This 
- weekly class for ages 8-18 meets from 6-7 pm in the Children’s Room. 
- Attendees will learn how to play chess and meet other novices. Advanced 
- registration is required for every session that you plan to attend. 
- Walk-ins will be included if space permits.\n\n\n\n
-LOCATION:Children's Room
-ORGANIZER;CN="Lauren Lapinski":MAILTO:llapinski@bayonnelibrary.org
-CATEGORIES:Children's Events, STEM/STEAM, Teen Events, Tween Events
-UID:LibCal-17197-15977866
-URL:https://bayonnelibrary.libcal.com/event/15977866
-END:VEVENT
-BEGIN:VEVENT
 DTSTART:20260514T183000Z
 DTEND:20260514T193000Z
 DTSTAMP:20260514T000000Z

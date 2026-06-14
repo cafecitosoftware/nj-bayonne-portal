@@ -4,6 +4,7 @@ import { useEventSources } from '@/composables/useEventSources'
 import FullCalendar from '@fullcalendar/vue3'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import listPlugin from '@fullcalendar/list'
+import { withCampaignParams } from '@/utils/outboundLinks'
 
 const { events, eventsLegend, loading, error } = useEventSources()
 
@@ -61,16 +62,7 @@ const displayDescription = computed(() => {
 })
 
 function buildOutboundUrl(rawUrl) {
-  if (!rawUrl) return ''
-  try {
-    const url = new URL(rawUrl)
-    url.searchParams.set('utm_source', 'cafecito-software')
-    url.searchParams.set('utm_medium', 'calendar')
-    url.searchParams.set('utm_campaign', 'bayonne-portal')
-    return url.toString()
-  } catch {
-    return rawUrl
-  }
+  return withCampaignParams(rawUrl)
 }
 
 function toDateTime(date, time) {

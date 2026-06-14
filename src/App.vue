@@ -80,7 +80,7 @@
             630 Avenue C, Bayonne, NJ 07002<br />
             (201) 858-6000
           </p>
-          <a href="https://www.bayonnenj.org" target="_blank" rel="noopener noreferrer"
+          <a :href="cityWebsiteUrl" target="_blank" rel="noopener noreferrer"
             class="inline-block mt-2 text-xs text-yellow-400 hover:text-yellow-300 transition"
           >
             Official City Website →
@@ -101,8 +101,10 @@
 <script setup>
 import { ref } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
+import { withCampaignParams } from '@/utils/outboundLinks'
 
 const mobileOpen = ref(false)
+const cityWebsiteUrl = withCampaignParams('https://www.bayonnenj.org')
 
 const navLinks = [
   { path: '/', label: '🏠 Home' },

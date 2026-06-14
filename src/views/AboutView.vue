@@ -130,17 +130,17 @@
           If this portal has been helpful, consider starring the project on GitHub or following Cafecito Software — it means a lot and helps others discover it.
         </p>
         <div class="flex flex-wrap justify-center gap-4">
-          <a href="https://github.com/cafecitosoftware/nj-bayonne-portal" target="_blank" rel="noopener noreferrer"
+          <a :href="projectRepoUrl" target="_blank" rel="noopener noreferrer"
             class="inline-flex items-center gap-2 bg-yellow-400 text-blue-900 font-bold px-5 py-2.5 rounded-full text-sm hover:bg-yellow-300 transition-colors"
           >
             ⭐ Star on GitHub
           </a>
-          <a href="https://github.com/cafecitosoftware" target="_blank" rel="noopener noreferrer"
+          <a :href="orgProfileUrl" target="_blank" rel="noopener noreferrer"
             class="inline-flex items-center gap-2 bg-white text-blue-900 font-bold px-5 py-2.5 rounded-full text-sm hover:bg-blue-50 transition-colors"
           >
             ☕ Follow @cafecitosoftware
           </a>
-          <a href="https://github.com/bertcafecito" target="_blank" rel="noopener noreferrer"
+          <a :href="authorProfileUrl" target="_blank" rel="noopener noreferrer"
             class="inline-flex items-center gap-2 bg-white text-blue-900 font-bold px-5 py-2.5 rounded-full text-sm hover:bg-blue-50 transition-colors"
           >
             👤 Follow @bertcafecito
@@ -153,6 +153,12 @@
 </template>
 
 <script setup>
+import { withCampaignParams } from '@/utils/outboundLinks'
+
+const projectRepoUrl = withCampaignParams('https://github.com/cafecitosoftware/nj-bayonne-portal')
+const orgProfileUrl = withCampaignParams('https://github.com/cafecitosoftware')
+const authorProfileUrl = withCampaignParams('https://github.com/bertcafecito')
+
 const storyCards = [
   { icon: '📵', label: 'Off Social Media', sub: 'By choice' },
   { icon: '🏙️', label: 'Bayonne Resident', sub: 'Landed here, love it' },

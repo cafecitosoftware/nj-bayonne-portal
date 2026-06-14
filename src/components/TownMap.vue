@@ -2,6 +2,7 @@
 import { useMapSources } from '@/composables/useMapSources'
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { GoogleMap, InfoWindow, Marker, MarkerCluster, Polygon } from 'vue3-google-map'
+import { withCampaignParams } from '@/utils/outboundLinks'
 
 const { mapCenter, sources, locations, polygons, loading, error } = useMapSources()
 const googleMapsApiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY
@@ -184,7 +185,7 @@ function formatDistance(miles) {
 }
 
 function directionsUrl(item) {
-  return `https://www.google.com/maps/dir/?api=1&destination=${item.lat},${item.lng}`
+  return withCampaignParams(`https://www.google.com/maps/dir/?api=1&destination=${item.lat},${item.lng}`)
 }
 
 function markerOptions(location) {

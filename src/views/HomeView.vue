@@ -85,7 +85,7 @@
             <span class="text-4xl mb-3">{{ service.icon }}</span>
             <h3 class="font-semibold text-gray-800 text-sm">{{ service.title }}</h3>
             <p class="text-gray-400 text-xs mt-1">{{ service.description }}</p>
-            <a :href="service.url" target="_blank" class="text-blue-500 text-xs mt-2 hover:underline">
+            <a :href="service.url" target="_blank" rel="noopener noreferrer" class="text-blue-500 text-xs mt-2 hover:underline">
               Visit Site
             </a>
           </div>
@@ -100,6 +100,7 @@
 
 <script setup>
 import { RouterLink } from 'vue-router'
+import { withCampaignParams } from '@/utils/outboundLinks'
 
 const cityStats = [
   { value: '72K+', label: 'Residents' },
@@ -109,9 +110,9 @@ const cityStats = [
 ]
 
 const services = [
-  { icon: '📚', title: 'Public Library', description: 'Public Library Services', url:'https://www.bayonnelibrary.org/' },
-  { icon: '🏫', title: 'School District', description: 'Public School Services', url:'https://www.bboed.org/' },
-  { icon: '🏛️', title: 'City of Bayonne', description: 'City of Bayonne', url:'https://www.bayonnenj.org' }
+  { icon: '📚', title: 'Public Library', description: 'Public Library Services', url: withCampaignParams('https://www.bayonnelibrary.org/') },
+  { icon: '🏫', title: 'School District', description: 'Public School Services', url: withCampaignParams('https://www.bboed.org/') },
+  { icon: '🏛️', title: 'City of Bayonne', description: 'City of Bayonne', url: withCampaignParams('https://www.bayonnenj.org') }
 ]
 
 </script>

@@ -42,7 +42,7 @@
         <figcaption class="px-4 py-3 text-xs leading-relaxed text-slate-500">
           Photo: "Bayonne Bridge" by Gould363,
           <a
-            href="https://commons.wikimedia.org/wiki/File:Bayonne_Bridge.jpg"
+            :href="wikiSourceUrl"
             target="_blank"
             rel="noopener noreferrer"
             class="text-blue-700 underline decoration-blue-300 underline-offset-2 hover:text-blue-800"
@@ -51,7 +51,7 @@
           </a>
           , licensed under
           <a
-            href="https://creativecommons.org/licenses/by-sa/4.0/"
+            :href="licenseUrl"
             target="_blank"
             rel="noopener noreferrer"
             class="text-blue-700 underline decoration-blue-300 underline-offset-2 hover:text-blue-800"
@@ -67,4 +67,8 @@
 
 <script setup>
 import { RouterLink } from 'vue-router'
+import { withCampaignParams } from '@/utils/outboundLinks'
+
+const wikiSourceUrl = withCampaignParams('https://commons.wikimedia.org/wiki/File:Bayonne_Bridge.jpg')
+const licenseUrl = withCampaignParams('https://creativecommons.org/licenses/by-sa/4.0/')
 </script>
