@@ -89,6 +89,23 @@
         </div>
       </section>
 
+      <!-- Technology Behind This -->
+      <section>
+        <h2 class="text-3xl font-bold text-gray-900 mb-2">Technology Behind This</h2>
+        <p class="text-gray-500 mb-8">Open, modern tools — no heavy frameworks, no unnecessary complexity.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div v-for="tech in techStack" :key="tech.name"
+            class="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 flex items-start gap-4"
+          >
+            <span class="text-3xl">{{ tech.icon }}</span>
+            <div>
+              <h3 class="font-bold text-gray-800 mb-1">{{ tech.name }}</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">{{ tech.description }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Values -->
       <section>
         <h2 class="text-3xl font-bold text-gray-900 mb-8">What We Stand For</h2>
@@ -105,6 +122,32 @@
         </div>
       </section>
 
+      <!-- Support -->
+      <section class="bg-blue-900 rounded-2xl px-8 py-10 text-center">
+        <div class="text-4xl mb-4">⭐</div>
+        <h2 class="text-2xl font-bold text-white mb-2">Support This Project</h2>
+        <p class="text-blue-200 mb-6 max-w-xl mx-auto leading-relaxed">
+          If this portal has been helpful, consider starring the project on GitHub or following Cafecito Software — it means a lot and helps others discover it.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="https://github.com/cafecitosoftware/nj-bayonne-portal" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 bg-yellow-400 text-blue-900 font-bold px-5 py-2.5 rounded-full text-sm hover:bg-yellow-300 transition-colors"
+          >
+            ⭐ Star on GitHub
+          </a>
+          <a href="https://github.com/cafecitosoftware" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 bg-white text-blue-900 font-bold px-5 py-2.5 rounded-full text-sm hover:bg-blue-50 transition-colors"
+          >
+            ☕ Follow @cafecitosoftware
+          </a>
+          <a href="https://github.com/bertcafecito" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 bg-white text-blue-900 font-bold px-5 py-2.5 rounded-full text-sm hover:bg-blue-50 transition-colors"
+          >
+            👤 Follow @bertcafecito
+          </a>
+        </div>
+      </section>
+
     </div>
   </div>
 </template>
@@ -117,7 +160,45 @@ const storyCards = [
   { icon: '💙', label: 'Community First', sub: 'Always free' },
 ]
 
-const techTags = ['Vue 3', 'Vite', 'Tailwind CSS', 'FullCalendar', 'Open Source']
+const techTags = ['Vue 3', 'Vite', 'Tailwind CSS', 'FullCalendar', 'Google Maps', 'Vue Router']
+
+const techStack = [
+  {
+    icon: '💚',
+    name: 'Vue 3',
+    description: 'Progressive JavaScript framework powering the UI with reactive components and the Composition API.',
+  },
+  {
+    icon: '⚡',
+    name: 'Vite',
+    description: 'Lightning-fast build tool and dev server. Near-instant hot reloads during development.',
+  },
+  {
+    icon: '🎨',
+    name: 'Tailwind CSS',
+    description: 'Utility-first CSS framework that makes styling fast, consistent, and fully responsive.',
+  },
+  {
+    icon: '📅',
+    name: 'FullCalendar',
+    description: 'Full-featured calendar library rendering community events in an interactive monthly view.',
+  },
+  {
+    icon: '🗺️',
+    name: 'Google Maps',
+    description: 'Interactive maps powered by vue3-google-map, used to display parks, splash pads, and points of interest.',
+  },
+  {
+    icon: '🔀',
+    name: 'Vue Router',
+    description: 'Official router for Vue 3, enabling seamless client-side navigation between pages.',
+  },
+  {
+    icon: '📈',
+    name: 'Vue Gtag',
+    description: 'Google Analytics integration to understand how residents use the portal and improve the experience.',
+  },
+]
 
 const values = [
   {
